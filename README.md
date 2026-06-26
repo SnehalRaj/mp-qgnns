@@ -123,13 +123,11 @@ data/          cfi_gadgets.json
 ## Citation
 
 ```bibtex
-@article{mp-qgnns,
-  title         = {Scalable Message-Passing Quantum Graph Neural Networks in the Weisfeiler–Leman Hierarchy},
-  author        = {Raj, Snehal and others},
-  year          = {2026},
-  eprint        = {2606.26873},
-  archivePrefix = {arXiv},
-  primaryClass  = {quant-ph}
+@article{raj2026scalable,
+  title={Scalable Message-Passing Quantum Graph Neural Networks in the Weisfeiler--Leman Hierarchy},
+  author={Raj, Snehal and Coyle, Brian and Monbroussou, L{\'e}o and Ferreira-Martins, Andr{\'e} J. and Farias, Renato M. S. and Kashefi, Elham},
+  journal={arXiv preprint arXiv:2606.26873},
+  year={2026}
 }
 ```
 
