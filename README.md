@@ -1,12 +1,13 @@
 # Scalable Message-Passing Quantum Graph Neural Networks in the Weisfeiler–Leman Hierarchy
 
+[![arXiv](https://img.shields.io/badge/arXiv-2606.26873-b31b1b.svg)](https://arxiv.org/abs/2606.26873)
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)
 ![PennyLane](https://img.shields.io/badge/PennyLane-0.34+-2a6fdb.svg)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)
 ![Tests](https://img.shields.io/badge/tests-30%20passing-brightgreen.svg)
 
-Code for the paper *Scalable Message-Passing Quantum Graph Neural Networks in the Weisfeiler–Leman Hierarchy*.
+Code for the paper [*Scalable Message-Passing Quantum Graph Neural Networks in the Weisfeiler–Leman Hierarchy*](https://arxiv.org/abs/2606.26873).
 The model performs message passing, is permutation equivariant, and sits at a chosen level of the
 Weisfeiler-Leman hierarchy. Both a PyTorch reduced-basis backend and a PennyLane circuit backend are
 included and checked against each other to machine precision.
@@ -123,9 +124,12 @@ data/          cfi_gadgets.json
 
 ```bibtex
 @article{mp-qgnns,
-  title  = {Scalable Message-Passing Quantum Graph Neural Networks in the Weisfeiler–Leman Hierarchy},
-  author = {Raj, Snehal and others},
-  year   = {2026}
+  title         = {Scalable Message-Passing Quantum Graph Neural Networks in the Weisfeiler–Leman Hierarchy},
+  author        = {Raj, Snehal and others},
+  year          = {2026},
+  eprint        = {2606.26873},
+  archivePrefix = {arXiv},
+  primaryClass  = {quant-ph}
 }
 ```
 
