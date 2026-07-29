@@ -1,6 +1,9 @@
 import numpy as np
+import pytest
 import torch
 
+from mp_qgnns.core.adjacency import EquivariantAdjacencyLayer
+from mp_qgnns.core.circuits import tsp_adjacency_unitary
 from mp_qgnns.data_io.tsp import random_instances, tour_length
 from mp_qgnns.models.tsp import TSPQGNN
 from mp_qgnns.training.tsp import tour_ratio, train
@@ -27,3 +30,56 @@ def test_training_improves_tour_ratio():
     after = tour_ratio(model, te_coords, opt)
     assert after < before
     assert after < 1.10
+
+
+def test_node_embeddings_are_equivariant():
+    """Relabelling the cities permutes the node embeddings and nothing else.
+
+    This is what the canonical edge ordering buys: RBS gates on overlapping pairs
+    do not commute, so a fixed lexicographic gate order fails here.
+
+    The quantum stack is equivariant; the edge logits are not, because EdgeHead
+    reads the ordered pair (a, b, a - b, a * b) and a - b is antisymmetric.
+    """
+    coords, _, _ = random_instances(6, 1, seed=0)
+    torch.manual_seed(0)
+    model = TSPQGNN(6, num_layers=2).eval()
+    base = model.node_embeddings(coords)[0]
+    rng = np.random.default_rng(1)
+    for _ in range(10):
+        p = rng.permutation(6)
+        out = model.node_embeddings(coords[:, p])[0]
+        assert torch.allclose(out, base[p], atol=1e-12)
+
+
+def test_adjacency_mixes_nodes():
+    """The edge layer moves amplitude between cities: guards against a per-city encoder."""
+    coords, _, _ = random_instances(5, 1, seed=0)
+    torch.manual_seed(0)
+    layer = EquivariantAdjacencyLayer(5)
+    x = torch.zeros(1, 5, 4)
+    x[0, 0] = 1.0
+    assert layer(x, coords)[0, 1:].abs().max().item() > 1e-6
+
+
+@pytest.mark.parametrize("n", [4, 5, 6])
+def test_adjacency_matches_pennylane_circuit(n):
+    """The node mixing equals its SingleExcitation circuit on the unary subspace."""
+    coords, _, _ = random_instances(n, 1, seed=0)
+    torch.manual_seed(0)
+    layer = EquivariantAdjacencyLayer(n)
+    si, sj = layer.orient_and_sort_edges(coords)
+    angles = layer.compute_angles(coords, si, sj)
+
+    torch_u = layer(torch.eye(n).unsqueeze(0), coords)[0].detach().numpy()
+    pl_u = tsp_adjacency_unitary(si[0].tolist(), sj[0].tolist(),
+                                 angles[0].detach().tolist(), n)
+    assert np.abs(torch_u - pl_u).max() < 1e-10
+
+
+def test_adjacency_is_orthogonal():
+    coords, _, _ = random_instances(6, 1, seed=0)
+    torch.manual_seed(0)
+    layer = EquivariantAdjacencyLayer(6)
+    u = layer(torch.eye(6).unsqueeze(0), coords)[0].detach()
+    assert torch.allclose(u.T @ u, torch.eye(6), atol=1e-10)

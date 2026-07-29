@@ -90,3 +90,30 @@ def hw_block(matrix: np.ndarray, D: int, k: int) -> np.ndarray:
     """Weight-k block of a 2**D operator, in subset order."""
     idx = subset_basis_indices(D, k)
     return matrix[np.ix_(idx, idx)]
+
+
+# ---------------------------------------------------------------------------
+# Node-register mixing on the TSP graph, the circuit form of
+# adjacency.EquivariantAdjacencyLayer (checked in tests/test_tsp.py).
+# ---------------------------------------------------------------------------
+
+
+def tsp_adjacency_ops(sorted_i, sorted_j, angles) -> list:
+    """One SingleExcitation per oriented edge, in the given canonical order.
+
+    The wire order [j, i] is load-bearing: on the one-excitation subspace it gives
+    the Givens rotation [[c, -s], [s, c]] with c = cos(theta/2), while [i, j] gives
+    the transpose, i.e. the layer at -theta.
+    """
+    return [qml.SingleExcitation(float(th), wires=[int(j), int(i)])
+            for i, j, th in zip(sorted_i, sorted_j, angles)]
+
+
+def tsp_adjacency_unitary(sorted_i, sorted_j, angles, n: int) -> np.ndarray:
+    """The node-mixing unitary reduced to the unary subspace, as an n x n array."""
+    idx = [1 << (n - 1 - v) for v in range(n)]
+    U = np.eye(n)
+    for op in tsp_adjacency_ops(sorted_i, sorted_j, angles):
+        G = np.asarray(qml.matrix(op, wire_order=range(n)))[np.ix_(idx, idx)].real
+        U = G @ U
+    return U
