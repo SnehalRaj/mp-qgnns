@@ -27,17 +27,21 @@ from ..core.compound import CompoundPyramidLayer
 
 
 class EdgeHead(nn.Module):
-    """Predict tour-edge logits from pairs of node embeddings."""
+    """Tour-edge logits from unordered pairs of node embeddings.
+
+    (a + b, |a - b|, a * b) is symmetric under exchanging the endpoints. The first
+    two recover the pair componentwise: max = (sum + |diff|) / 2.
+    """
 
     def __init__(self, emb_dim: int, hidden: int = 64):
         super().__init__()
-        self.net = nn.Sequential(nn.Linear(4 * emb_dim, hidden), nn.ReLU(), nn.Linear(hidden, 1))
+        self.net = nn.Sequential(nn.Linear(3 * emb_dim, hidden), nn.ReLU(), nn.Linear(hidden, 1))
 
     def forward(self, nodes: torch.Tensor) -> torch.Tensor:
         B, N, _ = nodes.shape
         iu = torch.triu_indices(N, N, offset=1, device=nodes.device)
         a, b = nodes[:, iu[0]], nodes[:, iu[1]]
-        feat = torch.cat([a, b, a - b, a * b], dim=-1)
+        feat = torch.cat([a + b, (a - b).abs(), a * b], dim=-1)
         scores = self.net(feat).squeeze(-1)
         logits = torch.zeros(B, N, N, device=nodes.device, dtype=nodes.dtype)
         logits[:, iu[0], iu[1]] = scores

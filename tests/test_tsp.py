@@ -5,7 +5,7 @@ import torch
 from mp_qgnns.core.adjacency import EquivariantAdjacencyLayer
 from mp_qgnns.core.circuits import tsp_adjacency_unitary
 from mp_qgnns.data_io.tsp import random_instances, tour_length
-from mp_qgnns.models.tsp import TSPQGNN
+from mp_qgnns.models.tsp import EdgeHead, TSPQGNN
 from mp_qgnns.training.tsp import tour_ratio, train
 
 torch.set_default_dtype(torch.float64)
@@ -37,9 +37,6 @@ def test_node_embeddings_are_equivariant():
 
     This is what the canonical edge ordering buys: RBS gates on overlapping pairs
     do not commute, so a fixed lexicographic gate order fails here.
-
-    The quantum stack is equivariant; the edge logits are not, because EdgeHead
-    reads the ordered pair (a, b, a - b, a * b) and a - b is antisymmetric.
     """
     coords, _, _ = random_instances(6, 1, seed=0)
     torch.manual_seed(0)
@@ -50,6 +47,27 @@ def test_node_embeddings_are_equivariant():
         p = rng.permutation(6)
         out = model.node_embeddings(coords[:, p])[0]
         assert torch.allclose(out, base[p], atol=1e-12)
+
+
+def test_edge_logits_are_equivariant():
+    """Relabelling the cities permutes the logit matrix."""
+    coords, _, _ = random_instances(6, 1, seed=0)
+    torch.manual_seed(0)
+    model = TSPQGNN(6, num_layers=2).eval()
+    base = model(coords)[0]
+    rng = np.random.default_rng(1)
+    for _ in range(10):
+        p = rng.permutation(6)
+        assert torch.allclose(model(coords[:, p])[0], base[np.ix_(p, p)], atol=1e-12)
+
+
+def test_edge_head_is_symmetric():
+    """An edge scores the same however its endpoints are ordered."""
+    torch.manual_seed(0)
+    head = EdgeHead(8).eval()
+    a, b = torch.randn(1, 1, 8), torch.randn(1, 1, 8)
+    nodes = torch.cat([a, b], dim=1)
+    assert torch.allclose(head(nodes)[0, 0, 1], head(nodes.flip(1))[0, 0, 1], atol=1e-12)
 
 
 def test_adjacency_mixes_nodes():

@@ -5,7 +5,7 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)
 ![PennyLane](https://img.shields.io/badge/PennyLane-0.34+-2a6fdb.svg)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)
-![Tests](https://img.shields.io/badge/tests-41%20passing-brightgreen.svg)
+![Tests](https://img.shields.io/badge/tests-43%20passing-brightgreen.svg)
 
 Code for the paper [*Scalable Message-Passing Quantum Graph Neural Networks in the Weisfeiler–Leman Hierarchy*](https://arxiv.org/abs/2606.26873).
 The model performs message passing, is permutation equivariant, and sits at a chosen level of the
@@ -51,7 +51,7 @@ mixing layer couples the registers and a readout returns node and edge features.
 git clone https://github.com/SnehalRaj/mp-qgnns
 cd mp-qgnns
 pip install -e .
-pytest            # 41 tests, ~30 s
+pytest            # 43 tests, ~30 s
 ```
 
 PyTorch Geometric is required only for the real QM9 dataset; everything else runs on numpy, scipy,
@@ -75,7 +75,7 @@ tour ratio versus the number of cities.*
 | **Fig 2a** | CFI separation: accuracy rises with j and is perfect at the predicted level (j=3 for CFI(K3), j=4 for CFI(K4)); a 1-WL GIN stays at chance | `python experiments/run_cfi_climb.py --family k3 --model qgnn` |
 | **Fig 2b** | QM9 HOMO-LUMO gap error falls monotonically with j | `python experiments/run_qm9.py --qm9-root data/QM9 --molecules 3000` |
 | **Fig 2c** | Euclidean TSP tour ratio versus number of cities | `python experiments/run_tsp.py --train-split data/tsp10_train.pkl --test-split data/tsp10_test.pkl` |
-| **Fig 3** | Equivariance improves data efficiency on TSP-5 | `pytest tests/test_invariance.py` (graph models) and `tests/test_tsp.py::test_node_embeddings_are_equivariant` (TSP); compare against a symmetry-broken arm |
+| **Fig 3** | Equivariance improves data efficiency on TSP-5 | `pytest tests/test_invariance.py` (graph models) and `tests/test_tsp.py::test_edge_logits_are_equivariant` (TSP); compare against a symmetry-broken arm |
 | **Fig 4** | Polynomial gradient variance: no barren plateau | `python experiments/run_trainability.py` |
 | **Fig 5** | Measurement-shot cost of each readout strategy | analysis (see Methods) |
 
@@ -92,11 +92,6 @@ Every quantum operation in the package is pinned to its circuit form: the Johnso
 reduced-basis mixing (1e-10); the RBS pyramid's weight-k block against the k-th compound of its
 single-particle block (1e-10); the QM9 mixing at j = 1, 2, 3 (1e-10); and the TSP node mixing
 against its `SingleExcitation` circuit on the unary subspace at n = 4, 5, 6 (1e-10).
-
-The node embeddings are exactly permutation equivariant. The edge logits are not: `EdgeHead` reads
-the ordered pair `(a, b, a - b, a * b)` and `a - b` is antisymmetric, so relabelling the two
-endpoints of an edge changes its score. The tour ratio is unaffected in practice, but the
-equivariance claim covers the quantum stack, not the readout.
 
 The quantum model is simulated in the weight-j subspace, so CFI(K3) (n=18, 816 subsets) runs on a
 laptop. At n=40 the subspace has C(40, 4) = 91,390 states; CFI(K4) is reported with the classical
