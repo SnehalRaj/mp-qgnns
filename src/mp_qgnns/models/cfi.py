@@ -24,8 +24,11 @@ def _sparse_johnson(n: int, j: int, dtype=torch.float64) -> torch.Tensor:
     return torch.sparse_coo_tensor(idx, val, csr.shape).coalesce()
 
 
-class _SubsetEncoder(nn.Module):
-    """Per-subset MLP mapping iso-type features to a unit-norm embedding."""
+class SubsetEncoder(nn.Module):
+    """Per-subset MLP mapping iso-type features to a unit-norm embedding.
+
+    Shared by the CFI and QM9 models.
+    """
 
     def __init__(self, in_dim: int, out_dim: int, hidden: int = 32):
         super().__init__()
@@ -59,8 +62,8 @@ class EquivariantQGNN(nn.Module):
         self.register_buffer("eigvals", torch.tensor(w, dtype=torch.float64))
         self.register_buffer("eigvecs", torch.tensor(V, dtype=torch.float64))
         self.alphas = nn.Parameter(torch.randn(num_rounds, dtype=torch.float64) * init_std)
-        self.enc0 = _SubsetEncoder(1 + j, emb, encoder_hidden)
-        self.encs = nn.ModuleList(_SubsetEncoder(1 + j, emb, encoder_hidden) for _ in range(num_rounds))
+        self.enc0 = SubsetEncoder(1 + j, emb, encoder_hidden)
+        self.encs = nn.ModuleList(SubsetEncoder(1 + j, emb, encoder_hidden) for _ in range(num_rounds))
 
     def _mix(self, x: torch.Tensor, alpha: torch.Tensor) -> torch.Tensor:
         # exp(i alpha A_J) x  =  V diag(exp(i alpha lambda)) V^T x

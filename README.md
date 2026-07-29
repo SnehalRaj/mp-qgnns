@@ -83,8 +83,13 @@ Supporting checks:
 
 ```bash
 python experiments/run_wl_ground_truth.py        # exact set-j-WL thresholds (K3 -> 3, K4 -> 4)
-pytest tests/test_backend_equiv.py tests/test_compound_backend.py   # PennyLane == PyTorch
+pytest tests/test_backend_equiv.py tests/test_compound_backend.py tests/test_qm9.py   # PennyLane == PyTorch
 ```
+
+Those three check, in order: the Johnson mixing against `exp(i*alpha*H)` built from the PennyLane
+Hamiltonian (1e-12) and against the CFI model's reduced-basis mixing (1e-10); the RBS pyramid's
+weight-k block against the k-th compound of its single-particle block (1e-10); and the QM9 mixing
+against the same PennyLane evolution at j = 1, 2, 3 (1e-10).
 
 The quantum model is simulated in the weight-j subspace, so CFI(K3) (n=18, 816 subsets) runs on a
 laptop. At n=40 the subspace has C(40, 4) = 91,390 states; CFI(K4) is reported with the classical

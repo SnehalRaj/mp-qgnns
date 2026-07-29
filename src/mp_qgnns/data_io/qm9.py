@@ -19,31 +19,62 @@ NUM_ATOM_TYPES = 5   # H, C, N, O, F
 NUM_BOND_TYPES = 4   # single, double, triple, aromatic
 
 
-def molecular_features(adj, atom_types, bond_types, node_mask, n: int, j: int):
-    """Per-subset features and a validity mask.
+_SUBSET_IDX_CACHE: dict = {}
 
-    Returns features [B, C(n, j), 1 + j + atom_types + bond_types] and a mask
-    [B, C(n, j)] that is one where every atom of the subset is present.
+
+def _subset_indices(n: int, j: int, device) -> torch.Tensor:
+    key = (n, j, str(device))
+    if key not in _SUBSET_IDX_CACHE:
+        _SUBSET_IDX_CACHE[key] = torch.tensor(
+            list(combinations(range(n), j)), dtype=torch.long, device=device
+        )
+    return _SUBSET_IDX_CACHE[key]
+
+
+def molecular_features(adj, atom_types, bond_types, node_mask, n: int, j: int):
+    """Per-subset iso-type features and a validity mask.
+
+    Each of the C(n, j) subsets carries ``[slot0, sorted internal degrees (j),
+    atom-type histogram, bond-type histogram]``. slot0 is the full-graph degree at
+    j = 1 and the internal edge count at j >= 2; a single atom induces no edges, so
+    an edge count at j = 1 would leave every structural slot zero.
+
+    ``valid`` is one where all atoms of the subset are real and, at j >= 2, the
+    induced subgraph has an internal edge. Invalid rows are zeroed.
     """
-    subsets = list(combinations(range(n), j))
-    B = adj.shape[0]
-    feat_dim = 1 + j + NUM_ATOM_TYPES + NUM_BOND_TYPES
-    feats = torch.zeros(B, len(subsets), feat_dim, dtype=adj.dtype)
-    valid = torch.zeros(B, len(subsets), dtype=adj.dtype)
-    for s_idx, s in enumerate(subsets):
-        s = list(s)
-        block = adj[:, s][:, :, s]
-        valid[:, s_idx] = node_mask[:, s].prod(dim=1)
-        feats[:, s_idx, 0] = block.sum(dim=(1, 2)) / 2.0
-        if j >= 2:
-            feats[:, s_idx, 1:1 + j] = torch.sort(block.sum(dim=2), dim=1).values
-        atoms = atom_types[:, s]
-        feats[:, s_idx, 1 + j:1 + j + NUM_ATOM_TYPES] = \
-            F.one_hot(atoms, NUM_ATOM_TYPES).sum(dim=1).to(adj.dtype)
-        bonds = bond_types[:, s][:, :, s]
-        bh = F.one_hot(bonds.long(), NUM_BOND_TYPES + 1).sum(dim=(1, 2)).to(adj.dtype)
-        feats[:, s_idx, 1 + j + NUM_ATOM_TYPES:] = bh[:, 1:] / 2.0
-    return feats, valid
+    subset_idx = _subset_indices(n, j, adj.device)
+    m = subset_idx.shape[0]
+    row_idx = subset_idx.unsqueeze(-1).expand(m, j, j)
+    col_idx = subset_idx.unsqueeze(-2).expand(m, j, j)
+
+    sub_adj = adj[:, row_idx, col_idx]                          # [B, m, j, j]
+    int_edges = sub_adj.sum(dim=(-2, -1)) / 2.0                 # [B, m]
+    if j == 1:
+        slot0 = adj.sum(dim=-1)                                 # full-graph degree [B, n]
+        sorted_degs = slot0.unsqueeze(-1)                       # [B, m, 1]
+    else:
+        slot0 = int_edges
+        sorted_degs, _ = sub_adj.sum(dim=-1).sort(dim=-1)       # [B, m, j]
+
+    atom_hist = (
+        F.one_hot(atom_types[:, subset_idx], num_classes=NUM_ATOM_TYPES)
+        .sum(dim=2)
+        .to(adj.dtype)
+    )
+    bond_hist = (
+        F.one_hot(bond_types[:, row_idx, col_idx].long(), num_classes=NUM_BOND_TYPES + 1)[..., 1:]
+        .sum(dim=(2, 3))
+        .to(adj.dtype)
+        / 2.0
+    )
+
+    feats = torch.cat(
+        [slot0.unsqueeze(-1), sorted_degs.to(adj.dtype), atom_hist, bond_hist], dim=-1
+    )
+    valid = node_mask[:, subset_idx].bool().all(dim=-1)
+    if j >= 2:
+        valid = valid & (int_edges > 0)
+    return feats * valid.unsqueeze(-1).to(feats.dtype), valid
 
 
 def synthetic_molecules(n_max: int, n_samples: int, seed: int = 0):

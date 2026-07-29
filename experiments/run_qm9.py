@@ -41,7 +41,7 @@ def main():
     print(f"{'j':>3} {'test MAE':>12}")
     for j in (1, 2, 3):
         torch.manual_seed(0)
-        model = QM9QGNN(args.n_max, j=j, num_layers=2)
+        model = QM9QGNN(args.n_max, j=j, num_rounds=2)
         train(model, train_batch, y_tr, epochs=args.epochs)
         print(f"{j:>3} {mae(model, test_batch, y_te):>12.4f}")
 
