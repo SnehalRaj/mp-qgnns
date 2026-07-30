@@ -13,3 +13,4 @@ results/
 *.pt
 *.npz
 .DS_Store
+*.pkl

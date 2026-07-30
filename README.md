@@ -74,7 +74,7 @@ tour ratio versus the number of cities.*
 | **Fig 1** | Framework: message passing, permutation equivariance, WL expressivity, and the two-register architecture | schematic (see Methods) |
 | **Fig 2a** | CFI separation: accuracy rises with j and is perfect at the predicted level (j=3 for CFI(K3), j=4 for CFI(K4)); a 1-WL GIN stays at chance | `python experiments/run_cfi_climb.py --family k3 --model qgnn` |
 | **Fig 2b** | QM9 HOMO-LUMO gap error falls monotonically with j | `python experiments/run_qm9.py --qm9-root data/QM9 --molecules 3000` |
-| **Fig 2c** | Euclidean TSP tour ratio versus number of cities | `python experiments/run_tsp.py --train-split data/tsp10_train.pkl --test-split data/tsp10_test.pkl` |
+| **Fig 2c** | Euclidean TSP tour ratio versus number of cities | `python experiments/run_tsp.py --n-cities 8 --samples 500` (random instances, no setup), or pass `--train-split`/`--test-split` from `generate_tsp.py` |
 | **Fig 3** | Equivariance improves data efficiency on TSP-5 | `pytest tests/test_invariance.py` (graph models) and `tests/test_tsp.py::test_edge_logits_are_equivariant` (TSP); compare against a symmetry-broken arm |
 | **Fig 4** | Polynomial gradient variance: no barren plateau | `python experiments/run_trainability.py` |
 | **Fig 5** | Measurement-shot cost of each readout strategy | analysis (see Methods) |
@@ -112,6 +112,10 @@ included or generated in code. Larger sets are produced or downloaded rather tha
 `experiments/generate_tsp.py` writes TSP splits with exact optimal tours, and `--qm9-root` downloads
 QM9 through PyTorch Geometric on first use. The run scripts accept `--synthetic` (QM9) and random
 instances (TSP) so the pipelines run without any download.
+
+`generate_tsp.py` solves each instance by brute force, so it is practical to about n = 9: 400
+instances take ~30 s at n = 8 and ~2 min at n = 9, and each further city multiplies that by n - 1.
+The larger sizes in the paper use LKH through the `elkai` package.
 
 ## Repository structure
 
