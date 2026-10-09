@@ -1,0 +1,447 @@
+{
+  "fourier": {
+    "experiment": "parameter-matched Fourier edge-angle map",
+    "success_threshold": "at least 0.01 lower tour ratio at both n=6 and n=7, without worse n=5 ratio",
+    "configuration": {
+      "train_n": 5,
+      "test_n": [
+        5,
+        6,
+        7
+      ],
+      "train_size": 160,
+      "test_size": 80,
+      "epochs": 100,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "rows": [
+      {
+        "seed": 0,
+        "variant": "mlp",
+        "parameters": 7145,
+        "copied_parameters": 7145,
+        "n5_tour_ratio": 1.000613422829095,
+        "n6_transfer_tour_ratio": 1.0035980648265812,
+        "n7_transfer_tour_ratio": 1.0143498187323305
+      },
+      {
+        "seed": 0,
+        "variant": "fourier",
+        "parameters": 7143,
+        "copied_parameters": 7143,
+        "n5_tour_ratio": 1.0011041642482053,
+        "n6_transfer_tour_ratio": 1.0062853784686165,
+        "n7_transfer_tour_ratio": 1.036362828456793
+      },
+      {
+        "seed": 1,
+        "variant": "mlp",
+        "parameters": 7145,
+        "copied_parameters": 7145,
+        "n5_tour_ratio": 1.000393252006683,
+        "n6_transfer_tour_ratio": 1.0064006768215203,
+        "n7_transfer_tour_ratio": 1.028471632688045
+      },
+      {
+        "seed": 1,
+        "variant": "fourier",
+        "parameters": 7143,
+        "copied_parameters": 7143,
+        "n5_tour_ratio": 1.0002116249605864,
+        "n6_transfer_tour_ratio": 1.0032765903439802,
+        "n7_transfer_tour_ratio": 1.0125230578509679
+      },
+      {
+        "seed": 2,
+        "variant": "mlp",
+        "parameters": 7145,
+        "copied_parameters": 7145,
+        "n5_tour_ratio": 1.0010802692259908,
+        "n6_transfer_tour_ratio": 1.005208262528217,
+        "n7_transfer_tour_ratio": 1.0071590955149792
+      },
+      {
+        "seed": 2,
+        "variant": "fourier",
+        "parameters": 7143,
+        "copied_parameters": 7143,
+        "n5_tour_ratio": 1.0010711770382108,
+        "n6_transfer_tour_ratio": 1.0033384973283015,
+        "n7_transfer_tour_ratio": 1.0281134474185833
+      },
+      {
+        "seed": 3,
+        "variant": "mlp",
+        "parameters": 7145,
+        "copied_parameters": 7145,
+        "n5_tour_ratio": 1.0023136904801633,
+        "n6_transfer_tour_ratio": 1.0095817221102,
+        "n7_transfer_tour_ratio": 1.034027928337666
+      },
+      {
+        "seed": 3,
+        "variant": "fourier",
+        "parameters": 7143,
+        "copied_parameters": 7143,
+        "n5_tour_ratio": 1.0011863261739593,
+        "n6_transfer_tour_ratio": 1.007865315386819,
+        "n7_transfer_tour_ratio": 1.0328405551055408
+      },
+      {
+        "seed": 4,
+        "variant": "mlp",
+        "parameters": 7145,
+        "copied_parameters": 7145,
+        "n5_tour_ratio": 1.0004448622196602,
+        "n6_transfer_tour_ratio": 1.0045846839335262,
+        "n7_transfer_tour_ratio": 1.0262086962079315
+      },
+      {
+        "seed": 4,
+        "variant": "fourier",
+        "parameters": 7143,
+        "copied_parameters": 7143,
+        "n5_tour_ratio": 1.0002979664990168,
+        "n6_transfer_tour_ratio": 1.0032456361102375,
+        "n7_transfer_tour_ratio": 1.0220323956172923
+      }
+    ],
+    "summary": {
+      "mlp": {
+        "n5_mean": 1.0009690993523184,
+        "n5_std": 0.0007145928306101061,
+        "n6_mean": 1.0058746820440088,
+        "n6_std": 0.002064461799553593,
+        "n7_mean": 1.0220434342961906,
+        "n7_std": 0.009828880914803525,
+        "parameters": 7145
+      },
+      "fourier": {
+        "n5_mean": 1.0007742517839957,
+        "n5_std": 0.0004266635111191287,
+        "n6_mean": 1.004802283527591,
+        "n6_std": 0.0019222536609116252,
+        "n7_mean": 1.0263744568898354,
+        "n7_std": 0.008429909040817576,
+        "parameters": 7143
+      }
+    },
+    "n6_ratio_improvement": 0.0010723985164178274,
+    "n7_ratio_improvement": -0.004331022593644818,
+    "passed": false
+  },
+  "shots": {
+    "experiment": "finite-shot audit of the actual CFI(K3) WL signal",
+    "success_threshold": "identify an operational gap if the optimistic median 5-sigma requirement exceeds 1e12 shots per bounded feature",
+    "configuration": {
+      "family": "k3",
+      "n": 18,
+      "wl_threshold": 3,
+      "relabels_per_class": 50,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "shot_grid": [
+        10000000000,
+        1000000000000,
+        100000000000000,
+        10000000000000000,
+        1000000000000000000,
+        100000000000000000000
+      ]
+    },
+    "rows": [
+      {
+        "seed": 0,
+        "j": 1,
+        "bounded_mean_gap_l2": 0.0,
+        "largest_component_gap": 0.0,
+        "max_relabelling_std": 0.0,
+        "optimistic_single_graph_shots_for_5sigma": null,
+        "oracle_accuracy_by_shots": {
+          "10000000000": 0.5,
+          "1000000000000": 0.5,
+          "100000000000000": 0.5,
+          "10000000000000000": 0.5,
+          "1000000000000000000": 0.5,
+          "100000000000000000000": 0.5
+        }
+      },
+      {
+        "seed": 0,
+        "j": 2,
+        "bounded_mean_gap_l2": 2.2400655930265395e-16,
+        "largest_component_gap": 1.1102230246251565e-16,
+        "max_relabelling_std": 9.041778636120275e-17,
+        "optimistic_single_graph_shots_for_5sigma": 9.96433989726208e+32,
+        "oracle_accuracy_by_shots": {
+          "10000000000": 0.5000000000005334,
+          "1000000000000": 0.5000000000053341,
+          "100000000000000": 0.5000000000533403,
+          "10000000000000000": 0.5000000005334039,
+          "1000000000000000000": 0.5000000053340385,
+          "100000000000000000000": 0.5000000533403857
+        }
+      },
+      {
+        "seed": 0,
+        "j": 3,
+        "bounded_mean_gap_l2": 2.4169549024631544e-09,
+        "largest_component_gap": 9.462765293566378e-10,
+        "max_relabelling_std": 7.810306212723673e-17,
+        "optimistic_single_graph_shots_for_5sigma": 8.559194791245904e+18,
+        "oracle_accuracy_by_shots": {
+          "10000000000": 0.5000493587051141,
+          "1000000000000": 0.5004935869264735,
+          "100000000000000": 0.5049357445995988,
+          "10000000000000000": 0.5492330665599876,
+          "1000000000000000000": 0.8920008652032972,
+          "100000000000000000000": 1.0
+        }
+      },
+      {
+        "seed": 1,
+        "j": 1,
+        "bounded_mean_gap_l2": 0.0,
+        "largest_component_gap": 0.0,
+        "max_relabelling_std": 0.0,
+        "optimistic_single_graph_shots_for_5sigma": null,
+        "oracle_accuracy_by_shots": {
+          "10000000000": 0.5,
+          "1000000000000": 0.5,
+          "100000000000000": 0.5,
+          "10000000000000000": 0.5,
+          "1000000000000000000": 0.5,
+          "100000000000000000000": 0.5
+        }
+      },
+      {
+        "seed": 1,
+        "j": 2,
+        "bounded_mean_gap_l2": 2.5751198467546455e-16,
+        "largest_component_gap": 1.1102230246251565e-16,
+        "max_relabelling_std": 1.2000516414257935e-16,
+        "optimistic_single_graph_shots_for_5sigma": 7.54006539082072e+32,
+        "oracle_accuracy_by_shots": {
+          "10000000000": 0.5000000000005886,
+          "1000000000000": 0.5000000000058863,
+          "100000000000000": 0.5000000000588622,
+          "10000000000000000": 0.5000000005886226,
+          "1000000000000000000": 0.5000000058862263,
+          "100000000000000000000": 0.5000000588622635
+        }
+      },
+      {
+        "seed": 1,
+        "j": 3,
+        "bounded_mean_gap_l2": 1.328188580861285e-09,
+        "largest_component_gap": 4.737579495373012e-10,
+        "max_relabelling_std": 1.0873293694632308e-16,
+        "optimistic_single_graph_shots_for_5sigma": 2.834330695794627e+19,
+        "oracle_accuracy_by_shots": {
+          "10000000000": 0.5000268336151529,
+          "1000000000000": 0.5002683361314972,
+          "100000000000000": 0.5026833412841681,
+          "10000000000000000": 0.526813395621682,
+          "1000000000000000000": 0.7494051397832726,
+          "100000000000000000000": 0.9999999999912922
+        }
+      },
+      {
+        "seed": 2,
+        "j": 1,
+        "bounded_mean_gap_l2": 0.0,
+        "largest_component_gap": 0.0,
+        "max_relabelling_std": 0.0,
+        "optimistic_single_graph_shots_for_5sigma": null,
+        "oracle_accuracy_by_shots": {
+          "10000000000": 0.5,
+          "1000000000000": 0.5,
+          "100000000000000": 0.5,
+          "10000000000000000": 0.5,
+          "1000000000000000000": 0.5,
+          "100000000000000000000": 0.5
+        }
+      },
+      {
+        "seed": 2,
+        "j": 2,
+        "bounded_mean_gap_l2": 2.374675277855696e-16,
+        "largest_component_gap": 1.1102230246251565e-16,
+        "max_relabelling_std": 1.0873293694632308e-16,
+        "optimistic_single_graph_shots_for_5sigma": 8.866690360716034e+32,
+        "oracle_accuracy_by_shots": {
+          "10000000000": 0.50000000000035,
+          "1000000000000": 0.5000000000035005,
+          "100000000000000": 0.5000000000350052,
+          "10000000000000000": 0.5000000003500528,
+          "1000000000000000000": 0.500000003500527,
+          "100000000000000000000": 0.5000000350052697
+        }
+      },
+      {
+        "seed": 2,
+        "j": 3,
+        "bounded_mean_gap_l2": 1.5437126607063429e-09,
+        "largest_component_gap": 4.941203557429219e-10,
+        "max_relabelling_std": 9.679999354253616e-17,
+        "optimistic_single_graph_shots_for_5sigma": 2.098152603684936e+19,
+        "oracle_accuracy_by_shots": {
+          "10000000000": 0.5000312134738071,
+          "1000000000000": 0.5003121347065435,
+          "100000000000000": 0.503121315538183,
+          "10000000000000000": 0.5311816570567022,
+          "1000000000000000000": 0.7830119253297796,
+          "100000000000000000000": 0.9999999999999976
+        }
+      },
+      {
+        "seed": 3,
+        "j": 1,
+        "bounded_mean_gap_l2": 0.0,
+        "largest_component_gap": 0.0,
+        "max_relabelling_std": 0.0,
+        "optimistic_single_graph_shots_for_5sigma": null,
+        "oracle_accuracy_by_shots": {
+          "10000000000": 0.5,
+          "1000000000000": 0.5,
+          "100000000000000": 0.5,
+          "10000000000000000": 0.5,
+          "1000000000000000000": 0.5,
+          "100000000000000000000": 0.5
+        }
+      },
+      {
+        "seed": 3,
+        "j": 2,
+        "bounded_mean_gap_l2": 1.9876557517355628e-16,
+        "largest_component_gap": 5.551115123125783e-17,
+        "max_relabelling_std": 1.2395242794346963e-16,
+        "optimistic_single_graph_shots_for_5sigma": 1.265574351793521e+33,
+        "oracle_accuracy_by_shots": {
+          "10000000000": 0.5000000000002678,
+          "1000000000000": 0.5000000000026779,
+          "100000000000000": 0.500000000026779,
+          "10000000000000000": 0.5000000002677905,
+          "1000000000000000000": 0.5000000026779048,
+          "100000000000000000000": 0.5000000267790476
+        }
+      },
+      {
+        "seed": 3,
+        "j": 3,
+        "bounded_mean_gap_l2": 8.052592691401495e-10,
+        "largest_component_gap": 2.7939872811189037e-10,
+        "max_relabelling_std": 1.0400313188920129e-16,
+        "optimistic_single_graph_shots_for_5sigma": 7.710784029384063e+19,
+        "oracle_accuracy_by_shots": {
+          "10000000000": 0.5000162409099315,
+          "1000000000000": 0.5001624090948737,
+          "100000000000000": 0.5016240865076044,
+          "10000000000000000": 0.5162364250465876,
+          "1000000000000000000": 0.6580324494018691,
+          "100000000000000000000": 0.99997659336205
+        }
+      },
+      {
+        "seed": 4,
+        "j": 1,
+        "bounded_mean_gap_l2": 0.0,
+        "largest_component_gap": 0.0,
+        "max_relabelling_std": 0.0,
+        "optimistic_single_graph_shots_for_5sigma": null,
+        "oracle_accuracy_by_shots": {
+          "10000000000": 0.5,
+          "1000000000000": 0.5,
+          "100000000000000": 0.5,
+          "10000000000000000": 0.5,
+          "1000000000000000000": 0.5,
+          "100000000000000000000": 0.5
+        }
+      },
+      {
+        "seed": 4,
+        "j": 2,
+        "bounded_mean_gap_l2": 1.732931944402133e-16,
+        "largest_component_gap": 5.551115123125783e-17,
+        "max_relabelling_std": 9.516197353929914e-17,
+        "optimistic_single_graph_shots_for_5sigma": 1.6649722111667906e+33,
+        "oracle_accuracy_by_shots": {
+          "10000000000": 0.5000000000002752,
+          "1000000000000": 0.5000000000027535,
+          "100000000000000": 0.5000000000275351,
+          "10000000000000000": 0.5000000002753504,
+          "1000000000000000000": 0.5000000027535042,
+          "100000000000000000000": 0.5000000275350416
+        }
+      },
+      {
+        "seed": 4,
+        "j": 3,
+        "bounded_mean_gap_l2": 2.0863812742382245e-09,
+        "largest_component_gap": 7.639830434946759e-10,
+        "max_relabelling_std": 1.0070059944007252e-16,
+        "optimistic_single_graph_shots_for_5sigma": 1.1486366040240685e+19,
+        "oracle_accuracy_by_shots": {
+          "10000000000": 0.5000419508922577,
+          "1000000000000": 0.5004195088460374,
+          "100000000000000": 0.504195011921839,
+          "10000000000000000": 0.5418737074542795,
+          "1000000000000000000": 0.8534976431697191,
+          "100000000000000000000": 1.0
+        }
+      }
+    ],
+    "median_j3_shots_for_5sigma": 2.098152603684936e+19,
+    "passed": true,
+    "warning": "Optimistic independent-Pauli and oracle-readout model; this is not a compiled measurement protocol."
+  },
+  "lie": {
+    "experiment": "Lie closure of the actual D=6, k=3 compound layer",
+    "success_threshold": "one two-body phase reaches full u(20), while extra hopping and a one-body phase remain restricted",
+    "rows": [
+      {
+        "D": 4,
+        "k": 2,
+        "reduced_dimension": 6,
+        "path_lie_dimension": 6,
+        "path_plus_long_range_dimension": 6,
+        "path_plus_one_body_phase_dimension": 16,
+        "path_plus_two_body_phase_dimension": 36,
+        "full_u_dimension": 36
+      },
+      {
+        "D": 5,
+        "k": 2,
+        "reduced_dimension": 10,
+        "path_lie_dimension": 10,
+        "path_plus_long_range_dimension": 10,
+        "path_plus_one_body_phase_dimension": 25,
+        "path_plus_two_body_phase_dimension": 100,
+        "full_u_dimension": 100
+      },
+      {
+        "D": 6,
+        "k": 3,
+        "reduced_dimension": 20,
+        "path_lie_dimension": 15,
+        "path_plus_long_range_dimension": 15,
+        "path_plus_one_body_phase_dimension": 36,
+        "path_plus_two_body_phase_dimension": 400,
+        "full_u_dimension": 400
+      }
+    ],
+    "passed": true,
+    "warning": "This is numerical evidence under Jordan-Wigner fermionic signs, not a general controllability proof."
+  }
+}
