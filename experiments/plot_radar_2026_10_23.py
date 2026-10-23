@@ -67,4 +67,5 @@ fig.suptitle("MP-QGNN radar MVPs, 23 October 2026", fontsize=14)
 fig.tight_layout()
 out = ROOT / "figures/radar_2026_10_23_summary.png"
 fig.savefig(out, dpi=180, bbox_inches="tight")
+fig.savefig(ROOT / "figures/radar_2026_10_23_summary.svg", bbox_inches="tight")
 print(out)
