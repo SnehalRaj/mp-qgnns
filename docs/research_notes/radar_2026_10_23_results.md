@@ -8,7 +8,7 @@ larger readout study.
 "Tour excess" means how much longer the predicted tour is than the exact best
 tour. For example, 0.05 means 5% longer. This is the main task metric below.
 
-![Summary plot](../../figures/radar_2026_10_23_summary.png)
+![Summary plot](../../figures/radar_2026_10_23_summary.svg)
 
 ## Decisions
 
