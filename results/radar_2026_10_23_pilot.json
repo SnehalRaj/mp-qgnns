@@ -1,0 +1,322 @@
+{
+  "commands": [
+    "python experiments/radar_2026_10_23.py pilot --output results/radar_2026_10_23_pilot.json"
+  ],
+  "date": "2026-10-23",
+  "margin": {
+    "analysis": {
+      "balanced_mean_margin": {
+        "pvalue": 0.4,
+        "rho": -0.6000000000000001
+      },
+      "mean_margin_selection_gain": -0.10403876133441067,
+      "normalized_q10_margin": {
+        "pvalue": 1.0,
+        "rho": 0.0
+      },
+      "raw_mean_margin": {
+        "pvalue": 0.4,
+        "rho": -0.6000000000000001
+      },
+      "selection_rows": [
+        {
+          "bce_depth": 2,
+          "bce_excess": 0.059854053451220864,
+          "margin_depth": 2,
+          "margin_excess": 0.059854053451220864,
+          "margin_selection_gain": 0.0,
+          "seed": 0
+        },
+        {
+          "bce_depth": 2,
+          "bce_excess": 0.05558398041262203,
+          "margin_depth": 1,
+          "margin_excess": 0.26366150308144337,
+          "margin_selection_gain": -0.20807752266882135,
+          "seed": 1
+        }
+      ]
+    },
+    "configuration": {
+      "depths": [
+        1,
+        2
+      ],
+      "epochs": 45,
+      "seeds": [
+        0,
+        1
+      ],
+      "test_samples": 24,
+      "test_size": 7,
+      "train_samples": 50,
+      "train_size": 5,
+      "validation_samples": 30
+    },
+    "rows": [
+      {
+        "balanced_mean_margin": 0.14947866022228973,
+        "depth": 1,
+        "normalized_q10_margin": -1.087910710897449,
+        "raw_mean_margin": 0.1494786602222897,
+        "seed": 0,
+        "unseen_greedy_excess": 0.0669290526221902,
+        "validation_loss": 0.5852884581896917
+      },
+      {
+        "balanced_mean_margin": 0.7400252664992204,
+        "depth": 2,
+        "normalized_q10_margin": -0.581297431108261,
+        "raw_mean_margin": 0.7400252664992203,
+        "seed": 0,
+        "unseen_greedy_excess": 0.059854053451220864,
+        "validation_loss": 0.5039727500314031
+      },
+      {
+        "balanced_mean_margin": 0.36936471491649747,
+        "depth": 1,
+        "normalized_q10_margin": -0.8136531949061355,
+        "raw_mean_margin": 0.36936471491649747,
+        "seed": 1,
+        "unseen_greedy_excess": 0.26366150308144337,
+        "validation_loss": 0.5469520719884501
+      },
+      {
+        "balanced_mean_margin": 0.59484126291638,
+        "depth": 2,
+        "normalized_q10_margin": -0.8531332625852571,
+        "raw_mean_margin": 0.59484126291638,
+        "seed": 1,
+        "unseen_greedy_excess": 0.05558398041262203,
+        "validation_loss": 0.5210124133314435
+      }
+    ],
+    "runtime_seconds": 2.2580642700195312
+  },
+  "mode": "pilot",
+  "readout": {
+    "analysis": {
+      "empirical_bernstein": {
+        "added_excess": -0.006051402054399593,
+        "agreement": 0.703125,
+        "shot_reduction_factor": 1.7579758425473646
+      },
+      "hoeffding": {
+        "added_excess": -0.010940897297132851,
+        "agreement": 0.78125,
+        "shot_reduction_factor": 2.1188033451159582
+      }
+    },
+    "configuration": {
+      "confidence_delta": 0.1,
+      "max_shots_per_edge": 512,
+      "measurement_repeats": 8,
+      "seeds": [
+        0,
+        1
+      ],
+      "test_samples": 16,
+      "test_size": 7
+    },
+    "rows": [
+      {
+        "exact_decoder_agreement": 0.703125,
+        "mean_binary_shots": 10752.0,
+        "mean_greedy_excess": 0.103670543838133,
+        "method": "hoeffding",
+        "policy": "fixed",
+        "seed": 0
+      },
+      {
+        "exact_decoder_agreement": 0.8046875,
+        "mean_binary_shots": 5341.625,
+        "mean_greedy_excess": 0.09003944203977371,
+        "method": "hoeffding",
+        "policy": "adaptive",
+        "seed": 0
+      },
+      {
+        "exact_decoder_agreement": 0.671875,
+        "mean_binary_shots": 6369.375,
+        "mean_greedy_excess": 0.09532123931904933,
+        "method": "empirical_bernstein",
+        "policy": "adaptive",
+        "seed": 0
+      },
+      {
+        "exact_decoder_agreement": 0.734375,
+        "mean_binary_shots": 10752.0,
+        "mean_greedy_excess": 0.11126923456778008,
+        "method": "hoeffding",
+        "policy": "fixed",
+        "seed": 1
+      },
+      {
+        "exact_decoder_agreement": 0.7578125,
+        "mean_binary_shots": 4807.5,
+        "mean_greedy_excess": 0.10301854177187367,
+        "method": "hoeffding",
+        "policy": "adaptive",
+        "seed": 1
+      },
+      {
+        "exact_decoder_agreement": 0.734375,
+        "mean_binary_shots": 5862.875,
+        "mean_greedy_excess": 0.10751573497806455,
+        "method": "empirical_bernstein",
+        "policy": "adaptive",
+        "seed": 1
+      }
+    ],
+    "runtime_seconds": 0.6043217182159424
+  },
+  "runtime_seconds": 8.13488245010376,
+  "size_query": {
+    "analysis": {
+      "seen_excess_improvement": -0.00016534619844576354,
+      "unseen_excess_improvement": -0.0038166840972159444
+    },
+    "configuration": {
+      "epochs_per_size": 35,
+      "seeds": [
+        0,
+        1
+      ],
+      "test_samples_per_size": 24,
+      "test_sizes": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "train_samples_per_size": 40,
+      "train_sizes": [
+        4,
+        5
+      ]
+    },
+    "rows": [
+      {
+        "greedy_excess": 0.025001117462390376,
+        "model": "baseline",
+        "n_cities": 4,
+        "seed": 0,
+        "split": "seen"
+      },
+      {
+        "greedy_excess": 0.026586808175799226,
+        "model": "baseline",
+        "n_cities": 5,
+        "seed": 0,
+        "split": "seen"
+      },
+      {
+        "greedy_excess": 0.07213389473874063,
+        "model": "baseline",
+        "n_cities": 6,
+        "seed": 0,
+        "split": "unseen"
+      },
+      {
+        "greedy_excess": 0.05380077154117733,
+        "model": "baseline",
+        "n_cities": 7,
+        "seed": 0,
+        "split": "unseen"
+      },
+      {
+        "greedy_excess": 0.03331563032767348,
+        "model": "fourier_query",
+        "n_cities": 4,
+        "seed": 0,
+        "split": "seen"
+      },
+      {
+        "greedy_excess": 0.02124022376362898,
+        "model": "fourier_query",
+        "n_cities": 5,
+        "seed": 0,
+        "split": "seen"
+      },
+      {
+        "greedy_excess": 0.06762310643276966,
+        "model": "fourier_query",
+        "n_cities": 6,
+        "seed": 0,
+        "split": "unseen"
+      },
+      {
+        "greedy_excess": 0.06035723460787093,
+        "model": "fourier_query",
+        "n_cities": 7,
+        "seed": 0,
+        "split": "unseen"
+      },
+      {
+        "greedy_excess": 0.021271175816147708,
+        "model": "baseline",
+        "n_cities": 4,
+        "seed": 1,
+        "split": "seen"
+      },
+      {
+        "greedy_excess": 0.02588846589161416,
+        "model": "baseline",
+        "n_cities": 5,
+        "seed": 1,
+        "split": "seen"
+      },
+      {
+        "greedy_excess": 0.058270918574835205,
+        "model": "baseline",
+        "n_cities": 6,
+        "seed": 1,
+        "split": "unseen"
+      },
+      {
+        "greedy_excess": 0.08719643581980814,
+        "model": "baseline",
+        "n_cities": 7,
+        "seed": 1,
+        "split": "unseen"
+      },
+      {
+        "greedy_excess": 0.01673571707153107,
+        "model": "fourier_query",
+        "n_cities": 4,
+        "seed": 1,
+        "split": "seen"
+      },
+      {
+        "greedy_excess": 0.028117380976901002,
+        "model": "fourier_query",
+        "n_cities": 5,
+        "seed": 1,
+        "split": "seen"
+      },
+      {
+        "greedy_excess": 0.04509364193882926,
+        "model": "fourier_query",
+        "n_cities": 6,
+        "seed": 1,
+        "split": "unseen"
+      },
+      {
+        "greedy_excess": 0.11359477408395523,
+        "model": "fourier_query",
+        "n_cities": 7,
+        "seed": 1,
+        "split": "unseen"
+      }
+    ],
+    "runtime_seconds": 5.272170782089233
+  },
+  "thresholds": {
+    "margin_go": "|rho| >= 0.60 and selection gain >= 0.03",
+    "margin_stop": "|rho| <= 0.30 or no selection gain after normalization revision",
+    "readout_go": "shot reduction >= 4, added excess <= 0.01, agreement >= 0.95",
+    "readout_stop": "shot reduction < 2 or added excess > 0.02 after confidence revision",
+    "size_query_go": "unseen excess improvement >= 0.05 and seen degradation <= 0.01",
+    "size_query_stop": "unseen improvement < 0.01 or seen degradation > 0.02 after revision"
+  }
+}
