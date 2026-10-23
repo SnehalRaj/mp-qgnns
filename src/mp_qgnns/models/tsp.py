@@ -78,3 +78,45 @@ class TSPQGNN(nn.Module):
     def forward(self, coords: torch.Tensor) -> torch.Tensor:
         """coords [B, n, 2] -> edge logits [B, n, n]."""
         return self.head(self.node_embeddings(coords))
+
+
+class FourierSizeTSPQGNN(TSPQGNN):
+    """TSPQGNN with a small, task-defined graph-size Fourier query.
+
+    The query is shared by every graph of the same size and therefore carries no
+    instance or label information.  It modulates the final node embeddings with
+    a feature-wise affine map.  The final query layer is zero-initialised so the
+    model begins exactly at the unconditioned ``TSPQGNN`` function.
+    """
+
+    def __init__(self, *args, query_frequencies=(0.25, 0.5, 1.0), **kwargs):
+        super().__init__(*args, **kwargs)
+        emb_dim = self.head.net[0].in_features // 3
+        frequencies = torch.tensor(query_frequencies, dtype=torch.get_default_dtype())
+        self.register_buffer("query_frequencies", frequencies)
+        self.size_queries = nn.ModuleList(
+            nn.Linear(2 * len(query_frequencies), 2 * emb_dim) for _ in range(self.num_layers)
+        )
+        for layer in self.size_queries:
+            nn.init.zeros_(layer.weight)
+            nn.init.zeros_(layer.bias)
+        self.query_size_override = None
+
+    def query_features(self, n_cities: int) -> torch.Tensor:
+        # Scaling by 8 keeps the phase smooth over the small-TSP transfer range.
+        phase = 2 * torch.pi * self.query_frequencies * (float(n_cities) / 8.0)
+        return torch.cat([torch.sin(phase), torch.cos(phase)])
+
+    def node_embeddings(self, coords: torch.Tensor) -> torch.Tensor:
+        query_size = coords.shape[1] if self.query_size_override is None else self.query_size_override
+        query = self.query_features(query_size).to(device=coords.device, dtype=coords.dtype)
+        x = None
+        for r in range(self.num_layers):
+            z = self.embed[r](coords)
+            z = z / (torch.linalg.vector_norm(z, dim=-1, keepdim=True) + 1e-12)
+            gamma, beta = self.size_queries[r](query).chunk(2)
+            z = z * (1.0 + torch.tanh(gamma).view(1, 1, -1)) + beta.view(1, 1, -1)
+            x = z if x is None else x + z
+            x = self.adjacency[r](x, coords)
+            x = self.layers[r](x)
+        return x
