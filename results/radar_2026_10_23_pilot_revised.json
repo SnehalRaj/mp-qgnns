@@ -1,0 +1,333 @@
+{
+  "commands": [
+    "python experiments/radar_2026_10_23.py pilot --output results/radar_2026_10_23_pilot_revised.json"
+  ],
+  "date": "2026-10-23",
+  "margin": {
+    "analysis": {
+      "balanced_mean_margin": {
+        "pvalue": 0.4,
+        "rho": -0.6000000000000001
+      },
+      "mean_margin_selection_gain": -0.0035374995854846707,
+      "normalized_q10_margin": {
+        "pvalue": 1.0,
+        "rho": 0.0
+      },
+      "raw_mean_margin": {
+        "pvalue": 0.4,
+        "rho": -0.6000000000000001
+      },
+      "selection_rows": [
+        {
+          "bce_depth": 2,
+          "bce_excess": 0.059854053451220864,
+          "margin_depth": 1,
+          "margin_excess": 0.0669290526221902,
+          "margin_selection_gain": -0.007074999170969341,
+          "seed": 0
+        },
+        {
+          "bce_depth": 2,
+          "bce_excess": 0.05558398041262203,
+          "margin_depth": 2,
+          "margin_excess": 0.05558398041262203,
+          "margin_selection_gain": 0.0,
+          "seed": 1
+        }
+      ],
+      "structured_q10_margin": {
+        "pvalue": 0.6,
+        "rho": -0.39999999999999997
+      }
+    },
+    "configuration": {
+      "depths": [
+        1,
+        2
+      ],
+      "epochs": 45,
+      "seeds": [
+        0,
+        1
+      ],
+      "test_samples": 24,
+      "test_size": 7,
+      "train_samples": 50,
+      "train_size": 5,
+      "validation_samples": 30
+    },
+    "rows": [
+      {
+        "balanced_mean_margin": 0.14947866022228973,
+        "depth": 1,
+        "normalized_q10_margin": -1.087910710897449,
+        "raw_mean_margin": 0.1494786602222897,
+        "seed": 0,
+        "structured_q10_margin": -0.6028798541732533,
+        "unseen_greedy_excess": 0.0669290526221902,
+        "validation_loss": 0.5852884581896917
+      },
+      {
+        "balanced_mean_margin": 0.7400252664992204,
+        "depth": 2,
+        "normalized_q10_margin": -0.581297431108261,
+        "raw_mean_margin": 0.7400252664992203,
+        "seed": 0,
+        "structured_q10_margin": -1.0146500129070644,
+        "unseen_greedy_excess": 0.059854053451220864,
+        "validation_loss": 0.5039727500314031
+      },
+      {
+        "balanced_mean_margin": 0.36936471491649747,
+        "depth": 1,
+        "normalized_q10_margin": -0.8136531949061355,
+        "raw_mean_margin": 0.36936471491649747,
+        "seed": 1,
+        "structured_q10_margin": -1.3040899941071933,
+        "unseen_greedy_excess": 0.26366150308144337,
+        "validation_loss": 0.5469520719884501
+      },
+      {
+        "balanced_mean_margin": 0.59484126291638,
+        "depth": 2,
+        "normalized_q10_margin": -0.8531332625852571,
+        "raw_mean_margin": 0.59484126291638,
+        "seed": 1,
+        "structured_q10_margin": -0.8149056221905677,
+        "unseen_greedy_excess": 0.05558398041262203,
+        "validation_loss": 0.5210124133314435
+      }
+    ],
+    "runtime_seconds": 2.3127825260162354
+  },
+  "mode": "pilot",
+  "readout": {
+    "analysis": {
+      "hoeffding": {
+        "added_excess": 0.004635907514814519,
+        "agreement": 0.859375,
+        "fixed_policy_agreement": 0.8671875,
+        "shot_reduction_factor": 2.977491237938644
+      },
+      "normal": {
+        "added_excess": -0.0023238893507191993,
+        "agreement": 0.84375,
+        "fixed_policy_agreement": 0.8671875,
+        "shot_reduction_factor": 6.038753159224937
+      }
+    },
+    "configuration": {
+      "batch_size": 32,
+      "confidence_delta": 0.05,
+      "max_shots_per_edge": 2048,
+      "measurement_repeats": 8,
+      "seeds": [
+        0,
+        1
+      ],
+      "test_samples": 16,
+      "test_size": 7
+    },
+    "rows": [
+      {
+        "exact_decoder_agreement": 0.84375,
+        "mean_binary_shots": 43008.0,
+        "mean_greedy_excess": 0.09141154906072267,
+        "method": "hoeffding",
+        "policy": "fixed",
+        "seed": 0
+      },
+      {
+        "exact_decoder_agreement": 0.84375,
+        "mean_binary_shots": 15597.75,
+        "mean_greedy_excess": 0.0968510757664367,
+        "method": "hoeffding",
+        "policy": "adaptive",
+        "seed": 0
+      },
+      {
+        "exact_decoder_agreement": 0.8125,
+        "mean_binary_shots": 7920.25,
+        "mean_greedy_excess": 0.08451702926208833,
+        "method": "normal",
+        "policy": "adaptive",
+        "seed": 0
+      },
+      {
+        "exact_decoder_agreement": 0.890625,
+        "mean_binary_shots": 43008.0,
+        "mean_greedy_excess": 0.09561679007266358,
+        "method": "hoeffding",
+        "policy": "fixed",
+        "seed": 1
+      },
+      {
+        "exact_decoder_agreement": 0.875,
+        "mean_binary_shots": 13291.0,
+        "mean_greedy_excess": 0.09944907839657856,
+        "method": "hoeffding",
+        "policy": "adaptive",
+        "seed": 1
+      },
+      {
+        "exact_decoder_agreement": 0.875,
+        "mean_binary_shots": 6323.75,
+        "mean_greedy_excess": 0.09786353116985952,
+        "method": "normal",
+        "policy": "adaptive",
+        "seed": 1
+      }
+    ],
+    "runtime_seconds": 0.5795955657958984
+  },
+  "runtime_seconds": 7.927279472351074,
+  "size_query": {
+    "analysis": {
+      "seen_excess_improvement": 0.001956725172852475,
+      "unseen_excess_improvement": 0.001012571762493697
+    },
+    "configuration": {
+      "epochs_per_size": 35,
+      "seeds": [
+        0,
+        1
+      ],
+      "test_samples_per_size": 24,
+      "test_sizes": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "train_samples_per_size": 40,
+      "train_sizes": [
+        4,
+        5
+      ]
+    },
+    "rows": [
+      {
+        "greedy_excess": 0.025001117462390376,
+        "model": "baseline",
+        "n_cities": 4,
+        "seed": 0,
+        "split": "seen"
+      },
+      {
+        "greedy_excess": 0.026586808175799226,
+        "model": "baseline",
+        "n_cities": 5,
+        "seed": 0,
+        "split": "seen"
+      },
+      {
+        "greedy_excess": 0.07213389473874063,
+        "model": "baseline",
+        "n_cities": 6,
+        "seed": 0,
+        "split": "unseen"
+      },
+      {
+        "greedy_excess": 0.05380077154117733,
+        "model": "baseline",
+        "n_cities": 7,
+        "seed": 0,
+        "split": "unseen"
+      },
+      {
+        "greedy_excess": 0.020299403263009868,
+        "model": "fourier_query",
+        "n_cities": 4,
+        "seed": 0,
+        "split": "seen"
+      },
+      {
+        "greedy_excess": 0.02458417880756879,
+        "model": "fourier_query",
+        "n_cities": 5,
+        "seed": 0,
+        "split": "seen"
+      },
+      {
+        "greedy_excess": 0.03592543303773681,
+        "model": "fourier_query",
+        "n_cities": 6,
+        "seed": 0,
+        "split": "unseen"
+      },
+      {
+        "greedy_excess": 0.06292338012527057,
+        "model": "fourier_query",
+        "n_cities": 7,
+        "seed": 0,
+        "split": "unseen"
+      },
+      {
+        "greedy_excess": 0.021271175816147708,
+        "model": "baseline",
+        "n_cities": 4,
+        "seed": 1,
+        "split": "seen"
+      },
+      {
+        "greedy_excess": 0.02588846589161416,
+        "model": "baseline",
+        "n_cities": 5,
+        "seed": 1,
+        "split": "seen"
+      },
+      {
+        "greedy_excess": 0.058270918574835205,
+        "model": "baseline",
+        "n_cities": 6,
+        "seed": 1,
+        "split": "unseen"
+      },
+      {
+        "greedy_excess": 0.08719643581980814,
+        "model": "baseline",
+        "n_cities": 7,
+        "seed": 1,
+        "split": "unseen"
+      },
+      {
+        "greedy_excess": 0.013478294821149614,
+        "model": "fourier_query",
+        "n_cities": 4,
+        "seed": 1,
+        "split": "seen"
+      },
+      {
+        "greedy_excess": 0.032558789762813296,
+        "model": "fourier_query",
+        "n_cities": 5,
+        "seed": 1,
+        "split": "seen"
+      },
+      {
+        "greedy_excess": 0.05556930711102975,
+        "model": "fourier_query",
+        "n_cities": 6,
+        "seed": 1,
+        "split": "unseen"
+      },
+      {
+        "greedy_excess": 0.1129336133505494,
+        "model": "fourier_query",
+        "n_cities": 7,
+        "seed": 1,
+        "split": "unseen"
+      }
+    ],
+    "runtime_seconds": 5.034569025039673
+  },
+  "thresholds": {
+    "margin_go": "|rho| >= 0.60 and selection gain >= 0.03",
+    "margin_stop": "|rho| <= 0.30 or no selection gain after normalization revision",
+    "readout_go": "shot reduction >= 4, added excess <= 0.01, agreement >= 0.95",
+    "readout_stop": "shot reduction < 2 or added excess > 0.02 after confidence revision",
+    "size_query_go": "unseen excess improvement >= 0.05 and seen degradation <= 0.01",
+    "size_query_stop": "unseen improvement < 0.01 or seen degradation > 0.02 after revision"
+  }
+}
