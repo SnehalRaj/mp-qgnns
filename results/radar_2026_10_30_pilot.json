@@ -1,0 +1,469 @@
+{
+  "commands": [
+    "python experiments/radar_2026_10_30.py pilot --output results/radar_2026_10_30_pilot.json"
+  ],
+  "date": "2026-10-30",
+  "deploy_compile": {
+    "analysis": {
+      "compiled_added_excess": 0.0,
+      "minimum_compile_fidelity": 0.9999999999992213,
+      "raw_pruned_added_excess": 0.029688453310633127,
+      "revised_pruned_added_excess": -0.001957522708425301
+    },
+    "configuration": {
+      "prune_fraction": 0.5,
+      "revision": "fine-tune surviving gates and remaining model",
+      "seeds": [
+        0,
+        1
+      ]
+    },
+    "rows": [
+      {
+        "baseline_excess": 0.07949357869904111,
+        "compile_rows": [
+          {
+            "compound_frobenius_error": 1.6425835564667986e-07,
+            "layer": 0,
+            "orthogonal_frobenius_error": 6.705819288900443e-08
+          },
+          {
+            "compound_frobenius_error": 2.6815379787879545e-07,
+            "layer": 1,
+            "orthogonal_frobenius_error": 1.0947332955885257e-07
+          }
+        ],
+        "compiled_excess": 0.07949357869904111,
+        "fidelity_rows": [
+          {
+            "layer": 0,
+            "mean_state_fidelity": 0.9999999999999526,
+            "minimum_state_fidelity": 0.9999999999992213
+          },
+          {
+            "layer": 1,
+            "mean_state_fidelity": 0.9999999999999953,
+            "minimum_state_fidelity": 0.9999999999999929
+          }
+        ],
+        "kept_gates": [
+          8,
+          8
+        ],
+        "raw_pruned_excess": 0.09923833059100017,
+        "revised_pruned_excess": 0.07786281419891926,
+        "seed": 0,
+        "total_gates": [
+          15,
+          15
+        ]
+      },
+      {
+        "baseline_excess": 0.0401033114330375,
+        "compile_rows": [
+          {
+            "compound_frobenius_error": 3.122268240127504e-07,
+            "layer": 0,
+            "orthogonal_frobenius_error": 1.274660671407166e-07
+          },
+          {
+            "compound_frobenius_error": 1.5858411787440454e-07,
+            "layer": 1,
+            "orthogonal_frobenius_error": 6.474169499846699e-08
+          }
+        ],
+        "compiled_excess": 0.0401033114330375,
+        "fidelity_rows": [
+          {
+            "layer": 0,
+            "mean_state_fidelity": 0.9999999999999897,
+            "minimum_state_fidelity": 0.9999999999999202
+          },
+          {
+            "layer": 1,
+            "mean_state_fidelity": 0.9999999999999982,
+            "minimum_state_fidelity": 0.9999999999999968
+          }
+        ],
+        "kept_gates": [
+          8,
+          8
+        ],
+        "raw_pruned_excess": 0.0797354661623447,
+        "revised_pruned_excess": 0.03781903051630875,
+        "seed": 1,
+        "total_gates": [
+          15,
+          15
+        ]
+      }
+    ],
+    "runtime_seconds": 3.260300636291504
+  },
+  "evolution_ablation": {
+    "analysis": {
+      "cfi": {
+        "k3": {
+          "full_accuracy": 1.0,
+          "full_advantage": 0.6875,
+          "zero_mixing_accuracy": 0.3125
+        },
+        "prism": {
+          "full_accuracy": 1.0,
+          "full_advantage": 0.0,
+          "zero_mixing_accuracy": 1.0
+        }
+      },
+      "tsp": {
+        "encoder_only": {
+          "seen_full_advantage": -0.009105238548841384,
+          "unseen_full_advantage": -0.026065481814438227
+        },
+        "no_adjacency": {
+          "seen_full_advantage": -0.021430620656701933,
+          "unseen_full_advantage": -0.048831670361998356
+        },
+        "no_compound": {
+          "seen_full_advantage": -0.017964387817992013,
+          "unseen_full_advantage": -0.02995136546307607
+        }
+      }
+    },
+    "cfi_rows": [
+      {
+        "family": "prism",
+        "invariance_spread_max": 1.0249578963339445e-12,
+        "j": 3,
+        "per_seed_acc": [
+          1.0,
+          1.0
+        ],
+        "test_acc_mean": 1.0,
+        "test_acc_std": 0.0,
+        "variant": "full"
+      },
+      {
+        "family": "prism",
+        "invariance_spread_max": 2.2382096176443156e-13,
+        "j": 3,
+        "per_seed_acc": [
+          1.0,
+          1.0
+        ],
+        "test_acc_mean": 1.0,
+        "test_acc_std": 0.0,
+        "variant": "zero_mixing"
+      },
+      {
+        "family": "k3",
+        "invariance_spread_max": 0.00079737468835539,
+        "j": 3,
+        "per_seed_acc": [
+          1.0,
+          1.0
+        ],
+        "test_acc_mean": 1.0,
+        "test_acc_std": 0.0,
+        "variant": "full"
+      },
+      {
+        "family": "k3",
+        "invariance_spread_max": 0.0,
+        "j": 3,
+        "per_seed_acc": [
+          0.375,
+          0.25
+        ],
+        "test_acc_mean": 0.3125,
+        "test_acc_std": 0.0625,
+        "variant": "zero_mixing"
+      }
+    ],
+    "configuration": {
+      "epochs": 55,
+      "seeds": [
+        0,
+        1
+      ],
+      "test_samples_per_size": 32,
+      "test_sizes": [
+        5,
+        6,
+        7
+      ],
+      "train_samples": 60
+    },
+    "runtime_seconds": 11.332689046859741,
+    "tsp_rows": [
+      {
+        "greedy_excess": 0.08342287395906502,
+        "n_cities": 5,
+        "seed": 0,
+        "split": "seen",
+        "variant": "full"
+      },
+      {
+        "greedy_excess": 0.12312303950163318,
+        "n_cities": 6,
+        "seed": 0,
+        "split": "unseen",
+        "variant": "full"
+      },
+      {
+        "greedy_excess": 0.17653066416401245,
+        "n_cities": 7,
+        "seed": 0,
+        "split": "unseen",
+        "variant": "full"
+      },
+      {
+        "greedy_excess": 0.056160982899841526,
+        "n_cities": 5,
+        "seed": 0,
+        "split": "seen",
+        "variant": "no_compound"
+      },
+      {
+        "greedy_excess": 0.06613171805128155,
+        "n_cities": 6,
+        "seed": 0,
+        "split": "unseen",
+        "variant": "no_compound"
+      },
+      {
+        "greedy_excess": 0.09891697302450492,
+        "n_cities": 7,
+        "seed": 0,
+        "split": "unseen",
+        "variant": "no_compound"
+      },
+      {
+        "greedy_excess": 0.040511995718043814,
+        "n_cities": 5,
+        "seed": 0,
+        "split": "seen",
+        "variant": "no_adjacency"
+      },
+      {
+        "greedy_excess": 0.04743813941103999,
+        "n_cities": 6,
+        "seed": 0,
+        "split": "unseen",
+        "variant": "no_adjacency"
+      },
+      {
+        "greedy_excess": 0.083921098597042,
+        "n_cities": 7,
+        "seed": 0,
+        "split": "unseen",
+        "variant": "no_adjacency"
+      },
+      {
+        "greedy_excess": 0.06784709678640025,
+        "n_cities": 5,
+        "seed": 0,
+        "split": "seen",
+        "variant": "encoder_only"
+      },
+      {
+        "greedy_excess": 0.0790076653004711,
+        "n_cities": 6,
+        "seed": 0,
+        "split": "unseen",
+        "variant": "encoder_only"
+      },
+      {
+        "greedy_excess": 0.12420256749304456,
+        "n_cities": 7,
+        "seed": 0,
+        "split": "unseen",
+        "variant": "encoder_only"
+      },
+      {
+        "greedy_excess": 0.03524278458931693,
+        "n_cities": 5,
+        "seed": 1,
+        "split": "seen",
+        "variant": "full"
+      },
+      {
+        "greedy_excess": 0.05395655323659445,
+        "n_cities": 6,
+        "seed": 1,
+        "split": "unseen",
+        "variant": "full"
+      },
+      {
+        "greedy_excess": 0.0722546808265973,
+        "n_cities": 7,
+        "seed": 1,
+        "split": "unseen",
+        "variant": "full"
+      },
+      {
+        "greedy_excess": 0.026575900012556386,
+        "n_cities": 5,
+        "seed": 1,
+        "split": "seen",
+        "variant": "no_compound"
+      },
+      {
+        "greedy_excess": 0.06090444808273525,
+        "n_cities": 6,
+        "seed": 1,
+        "split": "unseen",
+        "variant": "no_compound"
+      },
+      {
+        "greedy_excess": 0.08010633671801139,
+        "n_cities": 7,
+        "seed": 1,
+        "split": "unseen",
+        "variant": "no_compound"
+      },
+      {
+        "greedy_excess": 0.035292421516934264,
+        "n_cities": 5,
+        "seed": 1,
+        "split": "seen",
+        "variant": "no_adjacency"
+      },
+      {
+        "greedy_excess": 0.036198333445356036,
+        "n_cities": 6,
+        "seed": 1,
+        "split": "unseen",
+        "variant": "no_adjacency"
+      },
+      {
+        "greedy_excess": 0.06298068482740593,
+        "n_cities": 7,
+        "seed": 1,
+        "split": "unseen",
+        "variant": "no_adjacency"
+      },
+      {
+        "greedy_excess": 0.03260808466429893,
+        "n_cities": 5,
+        "seed": 1,
+        "split": "seen",
+        "variant": "encoder_only"
+      },
+      {
+        "greedy_excess": 0.03755529822394621,
+        "n_cities": 6,
+        "seed": 1,
+        "split": "unseen",
+        "variant": "encoder_only"
+      },
+      {
+        "greedy_excess": 0.08083747945362259,
+        "n_cities": 7,
+        "seed": 1,
+        "split": "unseen",
+        "variant": "encoder_only"
+      }
+    ]
+  },
+  "mode": "pilot",
+  "readout": {
+    "analysis": {
+      "confidence": {
+        "added_excess_vs_confidence": 0.0,
+        "agreement": 0.9131944444444444,
+        "reduction_vs_confidence": 1.0,
+        "reduction_vs_fixed": 5.923069507374916
+      },
+      "entropy": {
+        "added_excess_vs_confidence": 0.007575356142973548,
+        "agreement": 0.7065972222222222,
+        "reduction_vs_confidence": 1.0818731748018355,
+        "reduction_vs_fixed": 6.4080100125156445
+      },
+      "gap_retirement": {
+        "added_excess_vs_confidence": -0.0021263429867965228,
+        "agreement": 0.9270833333333334,
+        "reduction_vs_confidence": 1.0288633207696884,
+        "reduction_vs_fixed": 6.094028962507439
+      }
+    },
+    "configuration": {
+      "batch": 32,
+      "max_shots_per_candidate": 2048,
+      "repeats": 12,
+      "seeds": [
+        0,
+        1
+      ],
+      "test_samples": 24
+    },
+    "rows": [
+      {
+        "decoder_agreement": 0.8472222222222222,
+        "mean_binary_shots": 20480.0,
+        "mean_excess": 0.05741363700603378,
+        "policy": "fixed",
+        "seed": 0
+      },
+      {
+        "decoder_agreement": 0.8506944444444444,
+        "mean_binary_shots": 4272.888888888889,
+        "mean_excess": 0.061748095136858194,
+        "policy": "confidence",
+        "seed": 0
+      },
+      {
+        "decoder_agreement": 0.6631944444444444,
+        "mean_binary_shots": 3653.3333333333335,
+        "mean_excess": 0.06392686740483142,
+        "policy": "entropy",
+        "seed": 0
+      },
+      {
+        "decoder_agreement": 0.8680555555555556,
+        "mean_binary_shots": 4006.4444444444443,
+        "mean_excess": 0.0574781084024769,
+        "policy": "gap_retirement",
+        "seed": 0
+      },
+      {
+        "decoder_agreement": 0.9583333333333334,
+        "mean_binary_shots": 20480.0,
+        "mean_excess": 0.03232631279316595,
+        "policy": "fixed",
+        "seed": 1
+      },
+      {
+        "decoder_agreement": 0.9756944444444444,
+        "mean_binary_shots": 2642.4444444444443,
+        "mean_excess": 0.03257636951092732,
+        "policy": "confidence",
+        "seed": 1
+      },
+      {
+        "decoder_agreement": 0.75,
+        "mean_binary_shots": 2738.6666666666665,
+        "mean_excess": 0.045548309528901196,
+        "policy": "entropy",
+        "seed": 1
+      },
+      {
+        "decoder_agreement": 0.9861111111111112,
+        "mean_binary_shots": 2714.8888888888887,
+        "mean_excess": 0.03259367027171557,
+        "policy": "gap_retirement",
+        "seed": 1
+      }
+    ],
+    "runtime_seconds": 0.6039471626281738
+  },
+  "runtime_seconds": 15.197312831878662,
+  "thresholds": {
+    "deploy_go": "fidelity >= 0.999999 and 50% prune added excess <= 0.01 after fine-tune",
+    "deploy_stop": "fidelity < 0.999 or 25% prune added excess > 0.02 after revision",
+    "evolution_go": "CFI advantage >= 0.15 and TSP advantage >= 0.02",
+    "evolution_stop": "identity within 0.02 CFI accuracy or 0.01 TSP excess after revision",
+    "readout_go": ">=1.2x vs confidence, >=4x vs fixed, added excess <=0.001",
+    "readout_stop": "<1.05x vs confidence or added excess >0.005 after revision"
+  }
+}

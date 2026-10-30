@@ -53,3 +53,38 @@ class CompoundPyramidLayer(nn.Module):
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """Apply the layer to a state ``x`` of shape [..., C(D, k)]."""
         return torch.matmul(x, compound_matrix(self.orthogonal(), self.k).T)
+
+
+def rbs_pyramid_matrix(angles: torch.Tensor, D: int) -> torch.Tensor:
+    """Single-particle matrix of the PennyLane RBS pyramid.
+
+    The sign convention matches ``qml.SingleExcitation(theta)`` in
+    :func:`mp_qgnns.core.circuits.rbs_pyramid`.
+    """
+    matrix = torch.eye(D, dtype=angles.dtype, device=angles.device)
+    pairs = [(q, q + 1) for offset in range(D - 1) for q in range(D - 1 - offset)]
+    for theta, (a, b) in zip(angles, pairs):
+        c, s = torch.cos(theta / 2), torch.sin(theta / 2)
+        givens = torch.eye(D, dtype=angles.dtype, device=angles.device)
+        givens[a, a], givens[a, b] = c, s
+        givens[b, a], givens[b, b] = -s, c
+        matrix = givens @ matrix
+    return matrix
+
+
+class RBSPyramidLayer(nn.Module):
+    """Trainable circuit-native RBS pyramid with an optional fixed gate mask."""
+
+    def __init__(self, D: int, k: int, angles: torch.Tensor | None = None):
+        super().__init__()
+        self.D, self.k = D, k
+        n_angles = D * (D - 1) // 2
+        initial = torch.zeros(n_angles) if angles is None else angles.detach().clone()
+        self.angles = nn.Parameter(initial)
+        self.register_buffer("gate_mask", torch.ones(n_angles, dtype=initial.dtype))
+
+    def orthogonal(self) -> torch.Tensor:
+        return rbs_pyramid_matrix(self.angles * self.gate_mask, self.D)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        return torch.matmul(x, compound_matrix(self.orthogonal(), self.k).T)

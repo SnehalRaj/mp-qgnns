@@ -8,7 +8,7 @@ Subpackages:
     training  task-specific training and evaluation loops.
 """
 
-from .core.compound import CompoundPyramidLayer, compound_matrix
+from .core.compound import CompoundPyramidLayer, RBSPyramidLayer, compound_matrix, rbs_pyramid_matrix
 from .core.subsets import (
     enumerate_subsets,
     isotype_features,
@@ -30,6 +30,8 @@ __all__ = [
     "isotype_features_batched",
     "compound_matrix",
     "CompoundPyramidLayer",
+    "RBSPyramidLayer",
+    "rbs_pyramid_matrix",
     "set_j_wl_histograms",
     "distinguishes",
     "first_separating_j",
