@@ -1,0 +1,320 @@
+{
+  "beam_width": 1,
+  "caveat": "Small exact TSP splits; conditioned encoder is circuit-compatible input preparation, not hardware execution.",
+  "command": "python experiments/radar_2026_11_06.py conditional --out results/radar_2026_11_06/conditional.json",
+  "data": {
+    "test_sizes": {
+      "5": 35,
+      "6": 35,
+      "8": 25
+    },
+    "train_per_seen_size": 60,
+    "train_sizes": [
+      5,
+      6
+    ],
+    "unseen_size": 8
+  },
+  "elapsed_seconds": 28.552006006240845,
+  "epochs": 100,
+  "git_sha": "851537589d61bcce96130b055e5724291e7ea318",
+  "project": "conditional_cross_size",
+  "records": [
+    {
+      "gap_n5_percent": 2.342691070224534,
+      "gap_unseen_n8_percent": 7.223733804033028,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6791369443567924
+        },
+        {
+          "epoch": 51,
+          "loss": 0.49811706349276996
+        },
+        {
+          "epoch": 100,
+          "loss": 0.3782825752070583
+        }
+      ],
+      "method": "tsp5_transfer",
+      "ratio_n5": 1.0234269107022453,
+      "ratio_n6": null,
+      "ratio_unseen_n8": 1.0722373380403303,
+      "seed": 0
+    },
+    {
+      "gap_n5_percent": 1.3267594179999564,
+      "gap_unseen_n8_percent": 7.083231298895876,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6769913303037273
+        },
+        {
+          "epoch": 51,
+          "loss": 0.4695980808431911
+        },
+        {
+          "epoch": 100,
+          "loss": 0.38228064368491055
+        }
+      ],
+      "method": "joint_none",
+      "ratio_n5": 1.0132675941799996,
+      "ratio_n6": 1.0347882284929564,
+      "ratio_unseen_n8": 1.0708323129889588,
+      "seed": 0
+    },
+    {
+      "gap_n5_percent": 2.4470172811213775,
+      "gap_unseen_n8_percent": 9.603060557798226,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6707961755486378
+        },
+        {
+          "epoch": 51,
+          "loss": 0.5440798531738499
+        },
+        {
+          "epoch": 100,
+          "loss": 0.41904348468614805
+        }
+      ],
+      "method": "joint_raw",
+      "ratio_n5": 1.0244701728112138,
+      "ratio_n6": 1.0396142108218367,
+      "ratio_unseen_n8": 1.0960306055779823,
+      "seed": 0
+    },
+    {
+      "gap_n5_percent": 0.42526748193889574,
+      "gap_unseen_n8_percent": 7.26214585171896,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6591940671299445
+        },
+        {
+          "epoch": 51,
+          "loss": 0.4790081596845768
+        },
+        {
+          "epoch": 100,
+          "loss": 0.3770979624830232
+        }
+      ],
+      "method": "joint_normalized",
+      "ratio_n5": 1.004252674819389,
+      "ratio_n6": 1.0345435776698257,
+      "ratio_unseen_n8": 1.0726214585171896,
+      "seed": 0
+    },
+    {
+      "gap_n5_percent": 3.7807146581440243,
+      "gap_unseen_n8_percent": 10.8630248936737,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7009261362814595
+        },
+        {
+          "epoch": 51,
+          "loss": 0.5208740772894129
+        },
+        {
+          "epoch": 100,
+          "loss": 0.4094181243689794
+        }
+      ],
+      "method": "tsp5_transfer",
+      "ratio_n5": 1.0378071465814402,
+      "ratio_n6": null,
+      "ratio_unseen_n8": 1.108630248936737,
+      "seed": 1
+    },
+    {
+      "gap_n5_percent": 3.5949677178936046,
+      "gap_unseen_n8_percent": 9.222933298755432,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7017196363730236
+        },
+        {
+          "epoch": 51,
+          "loss": 0.48976549410340553
+        },
+        {
+          "epoch": 100,
+          "loss": 0.40253153955840293
+        }
+      ],
+      "method": "joint_none",
+      "ratio_n5": 1.035949677178936,
+      "ratio_n6": 1.0435366358270373,
+      "ratio_unseen_n8": 1.0922293329875543,
+      "seed": 1
+    },
+    {
+      "gap_n5_percent": 1.961626273110828,
+      "gap_unseen_n8_percent": 8.973968278961264,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6895160008811609
+        },
+        {
+          "epoch": 51,
+          "loss": 0.5485760881439455
+        },
+        {
+          "epoch": 100,
+          "loss": 0.4325880533768848
+        }
+      ],
+      "method": "joint_raw",
+      "ratio_n5": 1.0196162627311083,
+      "ratio_n6": 1.0402867951141215,
+      "ratio_unseen_n8": 1.0897396827896126,
+      "seed": 1
+    },
+    {
+      "gap_n5_percent": 2.3935345796202823,
+      "gap_unseen_n8_percent": 8.09890559839015,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7052301735380535
+        },
+        {
+          "epoch": 51,
+          "loss": 0.5149625798402773
+        },
+        {
+          "epoch": 100,
+          "loss": 0.403722560186486
+        }
+      ],
+      "method": "joint_normalized",
+      "ratio_n5": 1.0239353457962028,
+      "ratio_n6": 1.026891026635938,
+      "ratio_unseen_n8": 1.0809890559839015,
+      "seed": 1
+    },
+    {
+      "gap_n5_percent": 1.629147164053446,
+      "gap_unseen_n8_percent": 15.001076700830929,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6997359329752083
+        },
+        {
+          "epoch": 51,
+          "loss": 0.5433068921850464
+        },
+        {
+          "epoch": 100,
+          "loss": 0.37180268177091663
+        }
+      ],
+      "method": "tsp5_transfer",
+      "ratio_n5": 1.0162914716405345,
+      "ratio_n6": null,
+      "ratio_unseen_n8": 1.1500107670083093,
+      "seed": 2
+    },
+    {
+      "gap_n5_percent": 1.0633307649397405,
+      "gap_unseen_n8_percent": 7.063361253622125,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7007969900324289
+        },
+        {
+          "epoch": 51,
+          "loss": 0.5200293701628049
+        },
+        {
+          "epoch": 100,
+          "loss": 0.3711187948328589
+        }
+      ],
+      "method": "joint_none",
+      "ratio_n5": 1.0106333076493974,
+      "ratio_n6": 1.0173077159905257,
+      "ratio_unseen_n8": 1.0706336125362212,
+      "seed": 2
+    },
+    {
+      "gap_n5_percent": 2.813366131114048,
+      "gap_unseen_n8_percent": 8.778327194861934,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6970755977172637
+        },
+        {
+          "epoch": 51,
+          "loss": 0.5614439557626493
+        },
+        {
+          "epoch": 100,
+          "loss": 0.4435374492609914
+        }
+      ],
+      "method": "joint_raw",
+      "ratio_n5": 1.0281336613111405,
+      "ratio_n6": 1.0432714563239243,
+      "ratio_unseen_n8": 1.0877832719486193,
+      "seed": 2
+    },
+    {
+      "gap_n5_percent": 3.123325030353863,
+      "gap_unseen_n8_percent": 11.807861127421337,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.720413149804892
+        },
+        {
+          "epoch": 51,
+          "loss": 0.5116783110620964
+        },
+        {
+          "epoch": 100,
+          "loss": 0.42508768449958334
+        }
+      ],
+      "method": "joint_normalized",
+      "ratio_n5": 1.0312332503035386,
+      "ratio_n6": 1.0381289286997517,
+      "ratio_unseen_n8": 1.1180786112742134,
+      "seed": 2
+    }
+  ],
+  "revision_reason": "Pilot TSP-7 beam-5 gaps were near 1%; deploy to TSP-8 with greedy decoding.",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "summary": {
+    "best_conditioning": "joint_normalized",
+    "decision": "STOP",
+    "first_attempt": "raw graph size",
+    "median_unseen_gap_percent": {
+      "joint_none": 7.083231298895876,
+      "joint_normalized": 8.09890559839015,
+      "joint_raw": 8.973968278961264,
+      "tsp5_transfer": 10.8630248936737
+    },
+    "relative_gap_reduction_vs_stronger_baseline_percent": -14.33913784027632,
+    "revision": "bounded 2/n size feature",
+    "seeds_improved": 1
+  }
+}

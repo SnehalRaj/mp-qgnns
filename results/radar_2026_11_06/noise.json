@@ -1,0 +1,113 @@
+{
+  "beam_width": 1,
+  "candidate_training_noise_rad": [
+    0.0,
+    0.08,
+    0.16,
+    0.24
+  ],
+  "caveat": "Gaussian coherent over-rotation plus finite Bernoulli shots; not a hardware noise trace.",
+  "command": "python experiments/radar_2026_11_06.py noise --out results/radar_2026_11_06/noise.json",
+  "data": {
+    "n": 6,
+    "test": 50,
+    "train": 50,
+    "validation": 40
+  },
+  "elapsed_seconds": 19.796146631240845,
+  "epochs": 100,
+  "git_sha": "851537589d61bcce96130b055e5724291e7ea318",
+  "project": "residual_noise_selection",
+  "records": [
+    {
+      "baseline_clean_ratio": 1.03625135671141,
+      "baseline_noisy_gap_percent": 3.939898190313307,
+      "baseline_noisy_ratio": 1.039398981903133,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6745063554385852
+        },
+        {
+          "epoch": 51,
+          "loss": 0.4333611631857783
+        },
+        {
+          "epoch": 100,
+          "loss": 0.3436324691735885
+        }
+      ],
+      "seed": 0,
+      "selected_clean_ratio": 1.034203502042373,
+      "selected_noisy_gap_percent": 4.6203559112496295,
+      "selected_noisy_ratio": 1.0462035591124963,
+      "selected_training_noise_rad": 0.08,
+      "validation_ratio": 1.0333633761223808
+    },
+    {
+      "baseline_clean_ratio": 1.0332030016529168,
+      "baseline_noisy_gap_percent": 4.339603063926689,
+      "baseline_noisy_ratio": 1.043396030639267,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7018623350737266
+        },
+        {
+          "epoch": 51,
+          "loss": 0.4634569747869101
+        },
+        {
+          "epoch": 100,
+          "loss": 0.37170133742509887
+        }
+      ],
+      "seed": 1,
+      "selected_clean_ratio": 1.0363037188530233,
+      "selected_noisy_gap_percent": 5.169357497926019,
+      "selected_noisy_ratio": 1.0516935749792602,
+      "selected_training_noise_rad": 0.08,
+      "validation_ratio": 1.0436149785705695
+    },
+    {
+      "baseline_clean_ratio": 1.026054895097707,
+      "baseline_noisy_gap_percent": 2.733379788137147,
+      "baseline_noisy_ratio": 1.0273337978813715,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7022623606941284
+        },
+        {
+          "epoch": 51,
+          "loss": 0.5166090605188406
+        },
+        {
+          "epoch": 100,
+          "loss": 0.4144602841863157
+        }
+      ],
+      "seed": 2,
+      "selected_clean_ratio": 1.0197362315580252,
+      "selected_noisy_gap_percent": 4.013858571427398,
+      "selected_noisy_ratio": 1.040138585714274,
+      "selected_training_noise_rad": 0.16,
+      "validation_ratio": 1.029103228684362
+    }
+  ],
+  "revision_reason": "Pilot TSP-5 beam-5 gaps were below 1%; use harder TSP-6 greedy decoding.",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "shots": 512,
+  "summary": {
+    "decision": "STOP",
+    "median_baseline_noisy_gap_percent": 3.939898190313307,
+    "median_clean_gap_delta_points": -0.2047854669037008,
+    "median_selected_noisy_gap_percent": 4.6203559112496295,
+    "relative_gap_reduction_percent": -17.27094681302442
+  },
+  "target_angle_noise_rad": 0.25
+}

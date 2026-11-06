@@ -1,0 +1,314 @@
+{
+  "caveat": "Small exact TSP splits; conditioned encoder is circuit-compatible input preparation, not hardware execution.",
+  "command": "python experiments/radar_2026_11_06.py conditional --out results/radar_2026_11_06/conditional.json",
+  "data": {
+    "test_per_size": 35,
+    "train_per_seen_size": 60,
+    "train_sizes": [
+      5,
+      6
+    ],
+    "unseen_size": 7
+  },
+  "elapsed_seconds": 25.335628271102905,
+  "epochs": 80,
+  "git_sha": "851537589d61bcce96130b055e5724291e7ea318",
+  "project": "conditional_cross_size",
+  "records": [
+    {
+      "gap_n5_percent": 0.005354345301866736,
+      "gap_n7_percent": 1.3990408210795557,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6791369443567924
+        },
+        {
+          "epoch": 41,
+          "loss": 0.525073355142347
+        },
+        {
+          "epoch": 80,
+          "loss": 0.4322609331846557
+        }
+      ],
+      "method": "tsp5_transfer",
+      "ratio_n5": 1.0000535434530187,
+      "ratio_n6": null,
+      "ratio_n7": 1.0139904082107956,
+      "seed": 0
+    },
+    {
+      "gap_n5_percent": 0.06109717691717975,
+      "gap_n7_percent": 0.6408445097452198,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6769913303037273
+        },
+        {
+          "epoch": 41,
+          "loss": 0.49948961172845324
+        },
+        {
+          "epoch": 80,
+          "loss": 0.4122038810929184
+        }
+      ],
+      "method": "joint_none",
+      "ratio_n5": 1.0006109717691718,
+      "ratio_n6": 1.0047144179210754,
+      "ratio_n7": 1.0064084450974522,
+      "seed": 0
+    },
+    {
+      "gap_n5_percent": 0.0,
+      "gap_n7_percent": 1.274270063160854,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6707961755486378
+        },
+        {
+          "epoch": 41,
+          "loss": 0.5729886004565325
+        },
+        {
+          "epoch": 80,
+          "loss": 0.45276752047443025
+        }
+      ],
+      "method": "joint_raw",
+      "ratio_n5": 1.0,
+      "ratio_n6": 1.0090616310414546,
+      "ratio_n7": 1.0127427006316085,
+      "seed": 0
+    },
+    {
+      "gap_n5_percent": 0.06109717691717975,
+      "gap_n7_percent": 0.7856402658150463,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6591940671299445
+        },
+        {
+          "epoch": 41,
+          "loss": 0.50578872067468
+        },
+        {
+          "epoch": 80,
+          "loss": 0.41057941492860206
+        }
+      ],
+      "method": "joint_normalized",
+      "ratio_n5": 1.0006109717691718,
+      "ratio_n6": 1.0047144179210754,
+      "ratio_n7": 1.0078564026581505,
+      "seed": 0
+    },
+    {
+      "gap_n5_percent": 0.2457999620175677,
+      "gap_n7_percent": 3.2609973378634027,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7009261362814595
+        },
+        {
+          "epoch": 41,
+          "loss": 0.5589757976097921
+        },
+        {
+          "epoch": 80,
+          "loss": 0.45785074444712837
+        }
+      ],
+      "method": "tsp5_transfer",
+      "ratio_n5": 1.0024579996201757,
+      "ratio_n6": null,
+      "ratio_n7": 1.032609973378634,
+      "seed": 1
+    },
+    {
+      "gap_n5_percent": 0.2529738352938793,
+      "gap_n7_percent": 2.475698338391963,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7017196363730236
+        },
+        {
+          "epoch": 41,
+          "loss": 0.5333964098582875
+        },
+        {
+          "epoch": 80,
+          "loss": 0.43776877045824736
+        }
+      ],
+      "method": "joint_none",
+      "ratio_n5": 1.0025297383529388,
+      "ratio_n6": 1.0029206251002691,
+      "ratio_n7": 1.0247569833839196,
+      "seed": 1
+    },
+    {
+      "gap_n5_percent": 0.027759342803790332,
+      "gap_n7_percent": 3.8272517577725873,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6895160008811609
+        },
+        {
+          "epoch": 41,
+          "loss": 0.5609798523953515
+        },
+        {
+          "epoch": 80,
+          "loss": 0.4842160616291994
+        }
+      ],
+      "method": "joint_raw",
+      "ratio_n5": 1.000277593428038,
+      "ratio_n6": 1.0213237917454727,
+      "ratio_n7": 1.0382725175777259,
+      "seed": 1
+    },
+    {
+      "gap_n5_percent": 0.2457999620175677,
+      "gap_n7_percent": 1.779236271827389,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7052301735380535
+        },
+        {
+          "epoch": 41,
+          "loss": 0.5564835906068186
+        },
+        {
+          "epoch": 80,
+          "loss": 0.4496066658786149
+        }
+      ],
+      "method": "joint_normalized",
+      "ratio_n5": 1.0024579996201757,
+      "ratio_n6": 1.0069406974649675,
+      "ratio_n7": 1.017792362718274,
+      "seed": 1
+    },
+    {
+      "gap_n5_percent": 0.3155300521952453,
+      "gap_n7_percent": 1.6242348210890212,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6997359329752083
+        },
+        {
+          "epoch": 41,
+          "loss": 0.5771939825147907
+        },
+        {
+          "epoch": 80,
+          "loss": 0.43947997188399524
+        }
+      ],
+      "method": "tsp5_transfer",
+      "ratio_n5": 1.0031553005219525,
+      "ratio_n6": null,
+      "ratio_n7": 1.0162423482108902,
+      "seed": 2
+    },
+    {
+      "gap_n5_percent": 0.03110641434964645,
+      "gap_n7_percent": 0.9986787417916476,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7007969900324289
+        },
+        {
+          "epoch": 41,
+          "loss": 0.5584421238283384
+        },
+        {
+          "epoch": 80,
+          "loss": 0.4295459492170139
+        }
+      ],
+      "method": "joint_none",
+      "ratio_n5": 1.0003110641434965,
+      "ratio_n6": 1.0022852768072954,
+      "ratio_n7": 1.0099867874179165,
+      "seed": 2
+    },
+    {
+      "gap_n5_percent": 0.0071738732762893775,
+      "gap_n7_percent": 3.169032307588515,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6970755977172637
+        },
+        {
+          "epoch": 41,
+          "loss": 0.5905349942157512
+        },
+        {
+          "epoch": 80,
+          "loss": 0.499673964322498
+        }
+      ],
+      "method": "joint_raw",
+      "ratio_n5": 1.000071738732763,
+      "ratio_n6": 1.0060505794571701,
+      "ratio_n7": 1.0316903230758852,
+      "seed": 2
+    },
+    {
+      "gap_n5_percent": 0.2529738352938793,
+      "gap_n7_percent": 2.7704288714420766,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.720413149804892
+        },
+        {
+          "epoch": 41,
+          "loss": 0.5554167908589003
+        },
+        {
+          "epoch": 80,
+          "loss": 0.4536772629119554
+        }
+      ],
+      "method": "joint_normalized",
+      "ratio_n5": 1.0025297383529388,
+      "ratio_n6": 1.0034327227424076,
+      "ratio_n7": 1.0277042887144208,
+      "seed": 2
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "summary": {
+    "best_conditioning": "joint_normalized",
+    "decision": "STOP",
+    "first_attempt": "raw graph size",
+    "median_unseen_gap_percent": {
+      "joint_none": 0.9986787417916476,
+      "joint_normalized": 1.779236271827389,
+      "joint_raw": 3.169032307588515,
+      "tsp5_transfer": 1.6242348210890212
+    },
+    "relative_gap_reduction_vs_stronger_baseline_percent": -78.1590212519601,
+    "revision": "bounded 2/n size feature",
+    "seeds_improved": 1
+  }
+}

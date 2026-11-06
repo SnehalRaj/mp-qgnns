@@ -1,0 +1,111 @@
+{
+  "candidate_training_noise_rad": [
+    0.0,
+    0.04,
+    0.08,
+    0.12
+  ],
+  "caveat": "Gaussian coherent over-rotation plus finite Bernoulli shots; not a hardware noise trace.",
+  "command": "python experiments/radar_2026_11_06.py noise --out results/radar_2026_11_06/noise.json",
+  "data": {
+    "n": 5,
+    "test": 40,
+    "train": 60,
+    "validation": 30
+  },
+  "elapsed_seconds": 11.857338190078735,
+  "epochs": 70,
+  "git_sha": "851537589d61bcce96130b055e5724291e7ea318",
+  "project": "residual_noise_selection",
+  "records": [
+    {
+      "baseline_clean_ratio": 1.0028028886392861,
+      "baseline_noisy_gap_percent": 0.21135597983730214,
+      "baseline_noisy_ratio": 1.002113559798373,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6781524019970545
+        },
+        {
+          "epoch": 36,
+          "loss": 0.5437514538484006
+        },
+        {
+          "epoch": 70,
+          "loss": 0.4843424532284471
+        }
+      ],
+      "seed": 0,
+      "selected_clean_ratio": 1.0029468871083118,
+      "selected_noisy_gap_percent": 0.29023578503517555,
+      "selected_noisy_ratio": 1.0029023578503518,
+      "selected_training_noise_rad": 0.04,
+      "validation_ratio": 1.0000016151137587
+    },
+    {
+      "baseline_clean_ratio": 1.0082586860831841,
+      "baseline_noisy_gap_percent": 1.0334942620181753,
+      "baseline_noisy_ratio": 1.0103349426201818,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7001141806271104
+        },
+        {
+          "epoch": 36,
+          "loss": 0.5806109475694293
+        },
+        {
+          "epoch": 70,
+          "loss": 0.5009027392978866
+        }
+      ],
+      "seed": 1,
+      "selected_clean_ratio": 1.0082586860831841,
+      "selected_noisy_gap_percent": 1.0334942620181753,
+      "selected_noisy_ratio": 1.0103349426201818,
+      "selected_training_noise_rad": 0.0,
+      "validation_ratio": 1.0047241462772436
+    },
+    {
+      "baseline_clean_ratio": 1.0029407840163365,
+      "baseline_noisy_gap_percent": 0.3365300164437812,
+      "baseline_noisy_ratio": 1.0033653001644378,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.700191381383719
+        },
+        {
+          "epoch": 36,
+          "loss": 0.5903604808650335
+        },
+        {
+          "epoch": 70,
+          "loss": 0.5167846493844934
+        }
+      ],
+      "seed": 2,
+      "selected_clean_ratio": 1.0078341699350832,
+      "selected_noisy_gap_percent": 0.7834169935083235,
+      "selected_noisy_ratio": 1.0078341699350832,
+      "selected_training_noise_rad": 0.04,
+      "validation_ratio": 1.001579004653041
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "shots": 512,
+  "summary": {
+    "decision": "STOP",
+    "median_baseline_noisy_gap_percent": 0.3365300164437812,
+    "median_clean_gap_delta_points": 0.01439984690256857,
+    "median_selected_noisy_gap_percent": 0.7834169935083235,
+    "relative_gap_reduction_percent": -132.7926054819531
+  },
+  "target_angle_noise_rad": 0.1
+}
