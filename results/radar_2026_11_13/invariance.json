@@ -1,0 +1,168 @@
+{
+  "caveat": "Shortcut is node-label ordering on exact Euclidean TSP, not an image watermark; both arms use identical trainable parameter counts.",
+  "command": "python experiments/radar_2026_11_13.py invariance --out results/radar_2026_11_13/invariance.json",
+  "data": {
+    "n": 6,
+    "test": 60,
+    "train": 40
+  },
+  "elapsed_seconds": 27.647382497787476,
+  "epochs": 140,
+  "git_sha": "851537589d61bcce96130b055e5724291e7ea318",
+  "project": "permutation_shortcut",
+  "records": [
+    {
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6745142538793143
+        },
+        {
+          "epoch": 71,
+          "loss": 0.37868876274475066
+        },
+        {
+          "epoch": 140,
+          "loss": 0.23956914615681008
+        }
+      ],
+      "model": "equivariant",
+      "parameters": 7145,
+      "random_gap_percent": 3.290444888089028,
+      "relabel_penalty_points": 0.07259989116057408,
+      "seed": 0,
+      "sorted_gap_percent": 3.217844996928454
+    },
+    {
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6744513239102019
+        },
+        {
+          "epoch": 71,
+          "loss": 0.31588297431198264
+        },
+        {
+          "epoch": 140,
+          "loss": 0.19194544701668512
+        }
+      ],
+      "model": "label_ordered",
+      "parameters": 7145,
+      "random_gap_percent": 10.868370102131353,
+      "relabel_penalty_points": 7.058941915638517,
+      "seed": 0,
+      "sorted_gap_percent": 3.809428186492836
+    },
+    {
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.702170381148796
+        },
+        {
+          "epoch": 71,
+          "loss": 0.40000023622041725
+        },
+        {
+          "epoch": 140,
+          "loss": 0.25027826099474004
+        }
+      ],
+      "model": "equivariant",
+      "parameters": 7145,
+      "random_gap_percent": 2.995306823160826,
+      "relabel_penalty_points": 0.4506623592868131,
+      "seed": 1,
+      "sorted_gap_percent": 2.544644463874013
+    },
+    {
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7023248352401403
+        },
+        {
+          "epoch": 71,
+          "loss": 0.3900177784668232
+        },
+        {
+          "epoch": 140,
+          "loss": 0.25216451303944204
+        }
+      ],
+      "model": "label_ordered",
+      "parameters": 7145,
+      "random_gap_percent": 16.092076890141982,
+      "relabel_penalty_points": 12.473699461716482,
+      "seed": 1,
+      "sorted_gap_percent": 3.618377428425501
+    },
+    {
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7018305089832267
+        },
+        {
+          "epoch": 71,
+          "loss": 0.42339753616166376
+        },
+        {
+          "epoch": 140,
+          "loss": 0.26850975399019766
+        }
+      ],
+      "model": "equivariant",
+      "parameters": 7145,
+      "random_gap_percent": 2.504312695620481,
+      "relabel_penalty_points": 0.3885695904626507,
+      "seed": 2,
+      "sorted_gap_percent": 2.11574310515783
+    },
+    {
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7020027384722767
+        },
+        {
+          "epoch": 71,
+          "loss": 0.3797382414273701
+        },
+        {
+          "epoch": 140,
+          "loss": 0.24058004619822482
+        }
+      ],
+      "model": "label_ordered",
+      "parameters": 7145,
+      "random_gap_percent": 11.487341900927461,
+      "relabel_penalty_points": 8.134362068277468,
+      "seed": 2,
+      "sorted_gap_percent": 3.3529798326499938
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "summary": {
+    "decision": "PASS",
+    "median": {
+      "equivariant": {
+        "random_gap_percent": 2.995306823160826,
+        "relabel_penalty_points": 0.3885695904626507,
+        "sorted_gap_percent": 2.544644463874013
+      },
+      "label_ordered": {
+        "random_gap_percent": 11.487341900927461,
+        "relabel_penalty_points": 8.134362068277468,
+        "sorted_gap_percent": 3.618377428425501
+      }
+    },
+    "relative_random_label_advantage_percent": 73.92515301630404
+  }
+}

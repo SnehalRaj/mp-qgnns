@@ -1,0 +1,218 @@
+{
+  "caveat": "Exact dimensionless Rydberg simulation on TSP coordinates; not Pasqal hardware and not the paper's unit-disk register optimizer.",
+  "command": "python experiments/radar_2026_11_13.py qgf --out results/radar_2026_11_13/qgf.json",
+  "data": {
+    "n": 6,
+    "test": 60,
+    "train": 30
+  },
+  "elapsed_seconds": 37.98989820480347,
+  "epochs": 150,
+  "feature_modes": [
+    "full",
+    "stat"
+  ],
+  "git_sha": "851537589d61bcce96130b055e5724291e7ea318",
+  "project": "neutral_atom_qgf",
+  "records": [
+    {
+      "gap_percent": 7.174900844243481,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6749772994532738
+        },
+        {
+          "epoch": 76,
+          "loss": 0.36084829589509065
+        },
+        {
+          "epoch": 150,
+          "loss": 0.18392486124714105
+        }
+      ],
+      "model": "baseline",
+      "parameters": 7145,
+      "seed": 0
+    },
+    {
+      "gap_percent": 6.007238222076405,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7286534089724849
+        },
+        {
+          "epoch": 76,
+          "loss": 0.37744343879005565
+        },
+        {
+          "epoch": 150,
+          "loss": 0.17882404435086852
+        }
+      ],
+      "model": "qgf_full",
+      "parameters": 8425,
+      "seed": 0
+    },
+    {
+      "gap_percent": 5.966492294472925,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7221082822568934
+        },
+        {
+          "epoch": 76,
+          "loss": 0.39717364745926265
+        },
+        {
+          "epoch": 150,
+          "loss": 0.25118760002411256
+        }
+      ],
+      "model": "qgf_stat",
+      "parameters": 7785,
+      "seed": 0
+    },
+    {
+      "gap_percent": 6.155891197739738,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7018340943298063
+        },
+        {
+          "epoch": 76,
+          "loss": 0.38143194300011346
+        },
+        {
+          "epoch": 150,
+          "loss": 0.20359342454406526
+        }
+      ],
+      "model": "baseline",
+      "parameters": 7145,
+      "seed": 1
+    },
+    {
+      "gap_percent": 4.6850193274224905,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6882420378543568
+        },
+        {
+          "epoch": 76,
+          "loss": 0.42286324665398406
+        },
+        {
+          "epoch": 150,
+          "loss": 0.2271273261239198
+        }
+      ],
+      "model": "qgf_full",
+      "parameters": 8425,
+      "seed": 1
+    },
+    {
+      "gap_percent": 5.216468474439617,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7128288682892838
+        },
+        {
+          "epoch": 76,
+          "loss": 0.37359227883914703
+        },
+        {
+          "epoch": 150,
+          "loss": 0.15502912480166217
+        }
+      ],
+      "model": "qgf_stat",
+      "parameters": 7785,
+      "seed": 1
+    },
+    {
+      "gap_percent": 2.127321782076552,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.701207715937727
+        },
+        {
+          "epoch": 76,
+          "loss": 0.34799306878023023
+        },
+        {
+          "epoch": 150,
+          "loss": 0.1781378579424613
+        }
+      ],
+      "model": "baseline",
+      "parameters": 7145,
+      "seed": 2
+    },
+    {
+      "gap_percent": 8.695209686165462,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.737444172715467
+        },
+        {
+          "epoch": 76,
+          "loss": 0.39853264981957864
+        },
+        {
+          "epoch": 150,
+          "loss": 0.22199080776594893
+        }
+      ],
+      "model": "qgf_full",
+      "parameters": 8425,
+      "seed": 2
+    },
+    {
+      "gap_percent": 3.497065298324431,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6763989585449421
+        },
+        {
+          "epoch": 76,
+          "loss": 0.3448387948567288
+        },
+        {
+          "epoch": 150,
+          "loss": 0.14662314390985234
+        }
+      ],
+      "model": "qgf_stat",
+      "parameters": 7785,
+      "seed": 2
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "summary": {
+    "absolute_gain_points": 0.9394227233001207,
+    "best_qgf": "qgf_stat",
+    "decision": "PIVOT",
+    "median_gap_percent": {
+      "baseline": 6.155891197739738,
+      "qgf_full": 6.007238222076405,
+      "qgf_stat": 5.216468474439617
+    },
+    "parameter_ratio": 1.0895731280615815,
+    "relative_gain_percent": 15.26054787396257,
+    "revision": "full time series -> mean/std statistics",
+    "seeds_improved": 2
+  }
+}

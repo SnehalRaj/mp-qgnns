@@ -1,0 +1,312 @@
+{
+  "caveat": "Pointwise score is an empirical cross-entropy V-information proxy from finite probes; it is not a hardware-shot cost estimate.",
+  "command": "python experiments/radar_2026_11_13.py vinfo --out results/radar_2026_11_13/vinfo.json",
+  "data": {
+    "pool_n5": 120,
+    "selected": 60,
+    "test_n5": 60,
+    "transfer_test_n6": 60
+  },
+  "elapsed_seconds": 43.05463194847107,
+  "final_epochs": 140,
+  "git_sha": "851537589d61bcce96130b055e5724291e7ea318",
+  "probe_epochs": 40,
+  "project": "v_usable_selection",
+  "records": [
+    {
+      "gap_n5_percent": 0.9193054434238901,
+      "gap_transfer_n6_percent": 1.7968227033364315,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6784929311465309
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4342372862037806
+        },
+        {
+          "epoch": 140,
+          "loss": 0.2996074642915348
+        }
+      ],
+      "samples": 120,
+      "score_mean": null,
+      "seed": 0,
+      "selection": "full"
+    },
+    {
+      "gap_n5_percent": 1.7079805704831363,
+      "gap_transfer_n6_percent": 4.160479757039193,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6782943381912618
+        },
+        {
+          "epoch": 71,
+          "loss": 0.43340728966279357
+        },
+        {
+          "epoch": 140,
+          "loss": 0.27663778303094066
+        }
+      ],
+      "samples": 60,
+      "score_mean": null,
+      "seed": 0,
+      "selection": "uniform"
+    },
+    {
+      "gap_n5_percent": 2.5075326871270676,
+      "gap_transfer_n6_percent": 4.201101475936442,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6784959947642231
+        },
+        {
+          "epoch": 71,
+          "loss": 0.3364006081608563
+        },
+        {
+          "epoch": 140,
+          "loss": 0.17955273077314685
+        }
+      ],
+      "samples": 60,
+      "score_mean": 0.19973167527378125,
+      "seed": 0,
+      "selection": "top_pvi"
+    },
+    {
+      "gap_n5_percent": 2.915220652540995,
+      "gap_transfer_n6_percent": 3.392367012814579,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6781730760657385
+        },
+        {
+          "epoch": 71,
+          "loss": 0.3791784557245475
+        },
+        {
+          "epoch": 140,
+          "loss": 0.22563883321645997
+        }
+      ],
+      "samples": 60,
+      "score_mean": 0.16808831108877034,
+      "seed": 0,
+      "selection": "mixed_pvi"
+    },
+    {
+      "gap_n5_percent": 1.2370414816548436,
+      "gap_transfer_n6_percent": 2.48918441958057,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7004393733462948
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4806201643064072
+        },
+        {
+          "epoch": 140,
+          "loss": 0.35484870948152086
+        }
+      ],
+      "samples": 120,
+      "score_mean": null,
+      "seed": 1,
+      "selection": "full"
+    },
+    {
+      "gap_n5_percent": 3.111854201472508,
+      "gap_transfer_n6_percent": 4.610580640234363,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7003075793029346
+        },
+        {
+          "epoch": 71,
+          "loss": 0.46349342877436256
+        },
+        {
+          "epoch": 140,
+          "loss": 0.28524950727011467
+        }
+      ],
+      "samples": 60,
+      "score_mean": null,
+      "seed": 1,
+      "selection": "uniform"
+    },
+    {
+      "gap_n5_percent": 2.415154408552378,
+      "gap_transfer_n6_percent": 2.756143057105076,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6993575032157368
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4183811715417369
+        },
+        {
+          "epoch": 140,
+          "loss": 0.28559914219551397
+        }
+      ],
+      "samples": 60,
+      "score_mean": 0.11339718291360211,
+      "seed": 1,
+      "selection": "top_pvi"
+    },
+    {
+      "gap_n5_percent": 3.3225408779800514,
+      "gap_transfer_n6_percent": 4.694735203843892,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7001517482601464
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4408013449825084
+        },
+        {
+          "epoch": 140,
+          "loss": 0.2875634888903214
+        }
+      ],
+      "samples": 60,
+      "score_mean": 0.10125666460084377,
+      "seed": 1,
+      "selection": "mixed_pvi"
+    },
+    {
+      "gap_n5_percent": 0.8613798118935589,
+      "gap_transfer_n6_percent": 1.4935396935765954,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6999728028924548
+        },
+        {
+          "epoch": 71,
+          "loss": 0.47082506133732843
+        },
+        {
+          "epoch": 140,
+          "loss": 0.3282156618534696
+        }
+      ],
+      "samples": 120,
+      "score_mean": null,
+      "seed": 2,
+      "selection": "full"
+    },
+    {
+      "gap_n5_percent": 1.4160815094141466,
+      "gap_transfer_n6_percent": 2.4519206579362907,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6998933935770525
+        },
+        {
+          "epoch": 71,
+          "loss": 0.45772472844550943
+        },
+        {
+          "epoch": 140,
+          "loss": 0.2797890677199512
+        }
+      ],
+      "samples": 60,
+      "score_mean": null,
+      "seed": 2,
+      "selection": "uniform"
+    },
+    {
+      "gap_n5_percent": 1.0162551196839287,
+      "gap_transfer_n6_percent": 2.77560871876692,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7000263578139551
+        },
+        {
+          "epoch": 71,
+          "loss": 0.39090320296780307
+        },
+        {
+          "epoch": 140,
+          "loss": 0.22080769596857347
+        }
+      ],
+      "samples": 60,
+      "score_mean": 0.11920051803042414,
+      "seed": 2,
+      "selection": "top_pvi"
+    },
+    {
+      "gap_n5_percent": 1.284953353715812,
+      "gap_transfer_n6_percent": 2.7711156302501205,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7001874739508809
+        },
+        {
+          "epoch": 71,
+          "loss": 0.42405211353713335
+        },
+        {
+          "epoch": 140,
+          "loss": 0.2539862445837641
+        }
+      ],
+      "samples": 60,
+      "score_mean": 0.10690808883213786,
+      "seed": 2,
+      "selection": "mixed_pvi"
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "summary": {
+    "best_selection": "top_pvi",
+    "decision": "STOP",
+    "in_size_delta_vs_full_points": 1.4958489651284879,
+    "median": {
+      "full": {
+        "gap_n5_percent": 0.9193054434238901,
+        "gap_transfer_n6_percent": 1.7968227033364315
+      },
+      "mixed_pvi": {
+        "gap_n5_percent": 2.915220652540995,
+        "gap_transfer_n6_percent": 3.392367012814579
+      },
+      "top_pvi": {
+        "gap_n5_percent": 2.415154408552378,
+        "gap_transfer_n6_percent": 2.77560871876692
+      },
+      "uniform": {
+        "gap_n5_percent": 1.7079805704831363,
+        "gap_transfer_n6_percent": 4.160479757039193
+      }
+    },
+    "relative_transfer_gain_percent": 33.28633040286241,
+    "revision": "top pointwise V-information -> high-score plus quantile coverage",
+    "seeds_transfer_improved": 1
+  }
+}
