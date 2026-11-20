@@ -1,0 +1,620 @@
+{
+  "caveat": "Empirical gradient sampling is not the paper's irrep projector theorem and uses exact reduced-basis gradients rather than QPU estimates.",
+  "command": "python experiments/radar_2026_11_20.py trainability --out results/radar_2026_11_20/trainability.json",
+  "configs": [
+    {
+      "k": 1,
+      "layers": 1,
+      "median_gap_percent": 5.116037700676945,
+      "median_gradient_norm": 0.017308340784702475,
+      "name": "k1_l1",
+      "normalized_gradient_signal": 8.835293917663336e-06,
+      "parameters": 1959,
+      "raw_gradient_variance": 2.2221448962040135e-05
+    },
+    {
+      "k": 1,
+      "layers": 2,
+      "median_gap_percent": 3.606771458981717,
+      "median_gradient_norm": 0.02431899969659597,
+      "name": "k1_l2",
+      "normalized_gradient_signal": 9.222222107165707e-06,
+      "parameters": 2637,
+      "raw_gradient_variance": 0.00011597788003803579
+    },
+    {
+      "k": 2,
+      "layers": 2,
+      "median_gap_percent": 2.917966951055684,
+      "median_gradient_norm": 0.010643755698782318,
+      "name": "k2_l2",
+      "normalized_gradient_signal": 1.922991092824267e-06,
+      "parameters": 5535,
+      "raw_gradient_variance": 2.874122464423548e-05
+    },
+    {
+      "k": 3,
+      "layers": 2,
+      "median_gap_percent": 2.624560279442778,
+      "median_gradient_norm": 0.01021823234737359,
+      "name": "k3_l2",
+      "normalized_gradient_signal": 1.4301234915848272e-06,
+      "parameters": 7145,
+      "raw_gradient_variance": 2.0503192405569677e-05
+    },
+    {
+      "k": 3,
+      "layers": 3,
+      "median_gap_percent": 3.2525450614630635,
+      "median_gradient_norm": 0.011414502813502151,
+      "name": "k3_l3",
+      "normalized_gradient_signal": 1.3070540265088917e-06,
+      "parameters": 8733,
+      "raw_gradient_variance": 1.5366703546860698e-05
+    }
+  ],
+  "data": {
+    "gradient_batch": 18,
+    "n": 6,
+    "test": 70,
+    "train": 50
+  },
+  "elapsed_seconds": 53.10164141654968,
+  "epochs": 130,
+  "git_sha": "851537589d61bcce96130b055e5724291e7ea318",
+  "gradient_initializations": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "project": "structure_trainability_diagnostic",
+  "records": [
+    {
+      "config": "k1_l1",
+      "gap_percent": 4.948597130122501,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7034513289326703
+        },
+        {
+          "epoch": 66,
+          "loss": 0.5179433308202149
+        },
+        {
+          "epoch": 130,
+          "loss": 0.3683247312319765
+        }
+      ],
+      "parameters": 1959,
+      "seed": 0
+    },
+    {
+      "config": "k1_l1",
+      "gap_percent": 5.116037700676945,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6977991081735787
+        },
+        {
+          "epoch": 66,
+          "loss": 0.48449593666424484
+        },
+        {
+          "epoch": 130,
+          "loss": 0.40401832518033987
+        }
+      ],
+      "parameters": 1959,
+      "seed": 1
+    },
+    {
+      "config": "k1_l1",
+      "gap_percent": 4.5282311770963535,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6501936144501251
+        },
+        {
+          "epoch": 66,
+          "loss": 0.42375429261515385
+        },
+        {
+          "epoch": 130,
+          "loss": 0.35401059998852474
+        }
+      ],
+      "parameters": 1959,
+      "seed": 2
+    },
+    {
+      "config": "k1_l1",
+      "gap_percent": 5.45107454492928,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.704336445433195
+        },
+        {
+          "epoch": 66,
+          "loss": 0.47158570969760605
+        },
+        {
+          "epoch": 130,
+          "loss": 0.3883873425044863
+        }
+      ],
+      "parameters": 1959,
+      "seed": 3
+    },
+    {
+      "config": "k1_l1",
+      "gap_percent": 5.944267941585357,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7132359356157463
+        },
+        {
+          "epoch": 66,
+          "loss": 0.46337985780625685
+        },
+        {
+          "epoch": 130,
+          "loss": 0.3773672338844025
+        }
+      ],
+      "parameters": 1959,
+      "seed": 4
+    },
+    {
+      "config": "k1_l2",
+      "gap_percent": 3.7264249852430487,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7409653145932589
+        },
+        {
+          "epoch": 66,
+          "loss": 0.4221815441322211
+        },
+        {
+          "epoch": 130,
+          "loss": 0.33531077976364715
+        }
+      ],
+      "parameters": 2637,
+      "seed": 0
+    },
+    {
+      "config": "k1_l2",
+      "gap_percent": 5.515393954472714,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7065870862190008
+        },
+        {
+          "epoch": 66,
+          "loss": 0.427275014684315
+        },
+        {
+          "epoch": 130,
+          "loss": 0.34080409595126593
+        }
+      ],
+      "parameters": 2637,
+      "seed": 1
+    },
+    {
+      "config": "k1_l2",
+      "gap_percent": 2.9929084585442522,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7450584076156639
+        },
+        {
+          "epoch": 66,
+          "loss": 0.4821985127237009
+        },
+        {
+          "epoch": 130,
+          "loss": 0.3707491833981529
+        }
+      ],
+      "parameters": 2637,
+      "seed": 2
+    },
+    {
+      "config": "k1_l2",
+      "gap_percent": 1.691334531929778,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7210654915443053
+        },
+        {
+          "epoch": 66,
+          "loss": 0.42046932159830097
+        },
+        {
+          "epoch": 130,
+          "loss": 0.3093170057634291
+        }
+      ],
+      "parameters": 2637,
+      "seed": 3
+    },
+    {
+      "config": "k1_l2",
+      "gap_percent": 3.606771458981717,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6812586436579172
+        },
+        {
+          "epoch": 66,
+          "loss": 0.4267492656899936
+        },
+        {
+          "epoch": 130,
+          "loss": 0.33159390837906233
+        }
+      ],
+      "parameters": 2637,
+      "seed": 4
+    },
+    {
+      "config": "k2_l2",
+      "gap_percent": 3.6634365432351323,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.674274136759934
+        },
+        {
+          "epoch": 66,
+          "loss": 0.39440471450044406
+        },
+        {
+          "epoch": 130,
+          "loss": 0.3046988128939467
+        }
+      ],
+      "parameters": 5535,
+      "seed": 0
+    },
+    {
+      "config": "k2_l2",
+      "gap_percent": 2.917966951055684,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6593137749469049
+        },
+        {
+          "epoch": 66,
+          "loss": 0.39079012933483864
+        },
+        {
+          "epoch": 130,
+          "loss": 0.2874306891147271
+        }
+      ],
+      "parameters": 5535,
+      "seed": 1
+    },
+    {
+      "config": "k2_l2",
+      "gap_percent": 3.6412122402250446,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6628209644524186
+        },
+        {
+          "epoch": 66,
+          "loss": 0.3731791904699016
+        },
+        {
+          "epoch": 130,
+          "loss": 0.2845959360493255
+        }
+      ],
+      "parameters": 5535,
+      "seed": 2
+    },
+    {
+      "config": "k2_l2",
+      "gap_percent": 2.724143515958266,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6627017656804626
+        },
+        {
+          "epoch": 66,
+          "loss": 0.4076955131517636
+        },
+        {
+          "epoch": 130,
+          "loss": 0.2900074448265304
+        }
+      ],
+      "parameters": 5535,
+      "seed": 3
+    },
+    {
+      "config": "k2_l2",
+      "gap_percent": 2.094034116811705,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6884930522223044
+        },
+        {
+          "epoch": 66,
+          "loss": 0.4288384252047422
+        },
+        {
+          "epoch": 130,
+          "loss": 0.304203435994438
+        }
+      ],
+      "parameters": 5535,
+      "seed": 4
+    },
+    {
+      "config": "k3_l2",
+      "gap_percent": 2.3899754966276943,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6742087547512016
+        },
+        {
+          "epoch": 66,
+          "loss": 0.3731941458501435
+        },
+        {
+          "epoch": 130,
+          "loss": 0.2544099033657294
+        }
+      ],
+      "parameters": 7145,
+      "seed": 0
+    },
+    {
+      "config": "k3_l2",
+      "gap_percent": 2.7642160533775773,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7013051123201688
+        },
+        {
+          "epoch": 66,
+          "loss": 0.4244038869943193
+        },
+        {
+          "epoch": 130,
+          "loss": 0.29369851959136983
+        }
+      ],
+      "parameters": 7145,
+      "seed": 1
+    },
+    {
+      "config": "k3_l2",
+      "gap_percent": 2.2737874255335244,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7018246749455064
+        },
+        {
+          "epoch": 66,
+          "loss": 0.42612261347901026
+        },
+        {
+          "epoch": 130,
+          "loss": 0.28549446260986255
+        }
+      ],
+      "parameters": 7145,
+      "seed": 2
+    },
+    {
+      "config": "k3_l2",
+      "gap_percent": 4.000985091952014,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6824531781903059
+        },
+        {
+          "epoch": 66,
+          "loss": 0.4122996069775924
+        },
+        {
+          "epoch": 130,
+          "loss": 0.3270692899916828
+        }
+      ],
+      "parameters": 7145,
+      "seed": 3
+    },
+    {
+      "config": "k3_l2",
+      "gap_percent": 2.624560279442778,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6562940031863504
+        },
+        {
+          "epoch": 66,
+          "loss": 0.40463040492041313
+        },
+        {
+          "epoch": 130,
+          "loss": 0.2813967194904139
+        }
+      ],
+      "parameters": 7145,
+      "seed": 4
+    },
+    {
+      "config": "k3_l3",
+      "gap_percent": 3.33094466522621,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6643026190013758
+        },
+        {
+          "epoch": 66,
+          "loss": 0.35611206565067
+        },
+        {
+          "epoch": 130,
+          "loss": 0.22655808221998305
+        }
+      ],
+      "parameters": 8733,
+      "seed": 0
+    },
+    {
+      "config": "k3_l3",
+      "gap_percent": 2.9812770886971762,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7134233387954373
+        },
+        {
+          "epoch": 66,
+          "loss": 0.37498286833494543
+        },
+        {
+          "epoch": 130,
+          "loss": 0.23552100687576785
+        }
+      ],
+      "parameters": 8733,
+      "seed": 1
+    },
+    {
+      "config": "k3_l3",
+      "gap_percent": 3.5104007044562735,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7637053928164849
+        },
+        {
+          "epoch": 66,
+          "loss": 0.4091448498448684
+        },
+        {
+          "epoch": 130,
+          "loss": 0.2838562521151795
+        }
+      ],
+      "parameters": 8733,
+      "seed": 2
+    },
+    {
+      "config": "k3_l3",
+      "gap_percent": 2.2358359389160753,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7061155504315206
+        },
+        {
+          "epoch": 66,
+          "loss": 0.36974000523880446
+        },
+        {
+          "epoch": 130,
+          "loss": 0.21382502156691188
+        }
+      ],
+      "parameters": 8733,
+      "seed": 3
+    },
+    {
+      "config": "k3_l3",
+      "gap_percent": 3.2525450614630635,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6962142646601339
+        },
+        {
+          "epoch": 66,
+          "loss": 0.37797905451511227
+        },
+        {
+          "epoch": 130,
+          "loss": 0.23031144586034147
+        }
+      ],
+      "parameters": 8733,
+      "seed": 4
+    }
+  ],
+  "size_scaling": [
+    {
+      "n": 4,
+      "raw_gradient_variance": 5.444400112949904e-06
+    },
+    {
+      "n": 5,
+      "raw_gradient_variance": 1.0237176537671787e-05
+    },
+    {
+      "n": 6,
+      "raw_gradient_variance": 2.4435745825882186e-05
+    },
+    {
+      "n": 7,
+      "raw_gradient_variance": 3.958869908072337e-05
+    },
+    {
+      "n": 8,
+      "raw_gradient_variance": 5.0367186982579025e-05
+    }
+  ],
+  "summary": {
+    "decision": "STOP",
+    "raw_diagnostic_selection": "k1_l2",
+    "revision": "raw component variance -> parameter-normalized gradient signal",
+    "selection_gap_to_best_points": 0.9822111795389388,
+    "size_log10_variance_slope_per_city": 0.2519786361590276,
+    "spearman_normalized_signal_vs_gap": 0.6,
+    "spearman_raw_variance_vs_gap": 0.3
+  },
+  "training_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "calibration": {
+    "feature_dim": 20,
+    "probe_settings": 21,
+    "shots_per_probe": 256
+  },
+  "caveat": "The response is a controlled synthetic local-feature channel, not a measured IBM calibration; the MP-QGNN model and task path are real.",
+  "command": "python experiments/radar_2026_11_20.py calibration --out results/radar_2026_11_20/calibration.json",
+  "data": {
+    "n": 6,
+    "test": 80,
+    "train": 60
+  },
+  "elapsed_seconds": 13.888840675354004,
+  "epochs": 150,
+  "git_sha": "851537589d61bcce96130b055e5724291e7ea318",
+  "project": "reusable_feature_calibration",
+  "records": [
+    {
+      "gap_percent": 1.4296460637987618,
+      "heldout_calibration_mse": null,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6746046360447725
+        },
+        {
+          "epoch": 76,
+          "loss": 0.3786587961084734
+        },
+        {
+          "epoch": 150,
+          "loss": 0.2510062968781209
+        }
+      ],
+      "method": "ideal",
+      "ridge_lambda": null,
+      "seed": 0
+    },
+    {
+      "gap_percent": 4.0904376149209165,
+      "heldout_calibration_mse": null,
+      "loss_trace": null,
+      "method": "noisy",
+      "ridge_lambda": null,
+      "seed": 0
+    },
+    {
+      "gap_percent": 15.538209767543298,
+      "heldout_calibration_mse": null,
+      "loss_trace": null,
+      "method": "naive_inverse",
+      "ridge_lambda": null,
+      "seed": 0
+    },
+    {
+      "gap_percent": 6.679924939232018,
+      "heldout_calibration_mse": 0.2617587569888598,
+      "loss_trace": null,
+      "method": "ridge_inverse",
+      "ridge_lambda": 0.01,
+      "seed": 0
+    },
+    {
+      "gap_percent": 4.057044383789132,
+      "heldout_calibration_mse": null,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7025270404399527
+        },
+        {
+          "epoch": 76,
+          "loss": 0.3925225549869297
+        },
+        {
+          "epoch": 150,
+          "loss": 0.26137993540261
+        }
+      ],
+      "method": "ideal",
+      "ridge_lambda": null,
+      "seed": 1
+    },
+    {
+      "gap_percent": 9.980324249260208,
+      "heldout_calibration_mse": null,
+      "loss_trace": null,
+      "method": "noisy",
+      "ridge_lambda": null,
+      "seed": 1
+    },
+    {
+      "gap_percent": 8.053591642372915,
+      "heldout_calibration_mse": null,
+      "loss_trace": null,
+      "method": "naive_inverse",
+      "ridge_lambda": null,
+      "seed": 1
+    },
+    {
+      "gap_percent": 7.911769825940285,
+      "heldout_calibration_mse": 0.24874185360292006,
+      "loss_trace": null,
+      "method": "ridge_inverse",
+      "ridge_lambda": 0.01,
+      "seed": 1
+    },
+    {
+      "gap_percent": 2.467767951195854,
+      "heldout_calibration_mse": null,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7018671978818375
+        },
+        {
+          "epoch": 76,
+          "loss": 0.37574080579391506
+        },
+        {
+          "epoch": 150,
+          "loss": 0.21774395025918544
+        }
+      ],
+      "method": "ideal",
+      "ridge_lambda": null,
+      "seed": 2
+    },
+    {
+      "gap_percent": 6.889177363633658,
+      "heldout_calibration_mse": null,
+      "loss_trace": null,
+      "method": "noisy",
+      "ridge_lambda": null,
+      "seed": 2
+    },
+    {
+      "gap_percent": 13.761364362080265,
+      "heldout_calibration_mse": null,
+      "loss_trace": null,
+      "method": "naive_inverse",
+      "ridge_lambda": null,
+      "seed": 2
+    },
+    {
+      "gap_percent": 2.386405101272482,
+      "heldout_calibration_mse": 0.27397381571982443,
+      "loss_trace": null,
+      "method": "ridge_inverse",
+      "ridge_lambda": 0.01,
+      "seed": 2
+    },
+    {
+      "gap_percent": 2.292824126701132,
+      "heldout_calibration_mse": null,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6821539787272692
+        },
+        {
+          "epoch": 76,
+          "loss": 0.41188811788221447
+        },
+        {
+          "epoch": 150,
+          "loss": 0.2605077303897463
+        }
+      ],
+      "method": "ideal",
+      "ridge_lambda": null,
+      "seed": 3
+    },
+    {
+      "gap_percent": 13.762932731805488,
+      "heldout_calibration_mse": null,
+      "loss_trace": null,
+      "method": "noisy",
+      "ridge_lambda": null,
+      "seed": 3
+    },
+    {
+      "gap_percent": 4.512649065462071,
+      "heldout_calibration_mse": null,
+      "loss_trace": null,
+      "method": "naive_inverse",
+      "ridge_lambda": null,
+      "seed": 3
+    },
+    {
+      "gap_percent": 4.2999471770782005,
+      "heldout_calibration_mse": 0.2690785313891514,
+      "loss_trace": null,
+      "method": "ridge_inverse",
+      "ridge_lambda": 0.01,
+      "seed": 3
+    },
+    {
+      "gap_percent": 2.1784298797638657,
+      "heldout_calibration_mse": null,
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6563083015204859
+        },
+        {
+          "epoch": 76,
+          "loss": 0.3653608694901007
+        },
+        {
+          "epoch": 150,
+          "loss": 0.20626426226336314
+        }
+      ],
+      "method": "ideal",
+      "ridge_lambda": null,
+      "seed": 4
+    },
+    {
+      "gap_percent": 12.754664578092157,
+      "heldout_calibration_mse": null,
+      "loss_trace": null,
+      "method": "noisy",
+      "ridge_lambda": null,
+      "seed": 4
+    },
+    {
+      "gap_percent": 2.1777547773875083,
+      "heldout_calibration_mse": null,
+      "loss_trace": null,
+      "method": "naive_inverse",
+      "ridge_lambda": null,
+      "seed": 4
+    },
+    {
+      "gap_percent": 2.5635446512635607,
+      "heldout_calibration_mse": 0.2186705129988242,
+      "loss_trace": null,
+      "method": "ridge_inverse",
+      "ridge_lambda": 0.01,
+      "seed": 4
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "summary": {
+    "decision": "PIVOT",
+    "median_gap_percent": {
+      "ideal": 2.292824126701132,
+      "naive_inverse": 8.053591642372915,
+      "noisy": 9.980324249260208,
+      "ridge_inverse": 4.2999471770782005
+    },
+    "median_recovery_percent": 73.89108268776299,
+    "revision": "direct pseudoinverse -> held-out-selected ridge inverse",
+    "seeds_harmed_over_half_point": 1,
+    "seeds_recovering_at_least_half": 3
+  }
+}
