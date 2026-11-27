@@ -1,0 +1,555 @@
+{
+  "caveat": "The literal no-go is exact for the paper's global Z-string in a fixed-weight sector. The collective hopping layer is a symmetry-compatible constructive alternative, not the same unitary.",
+  "command": "python experiments/radar_2026_11_27.py contractive --out results/radar_2026_11_27/contractive.json",
+  "data": {
+    "n": 6,
+    "test": 70,
+    "train": 60,
+    "transfer_n7": 70
+  },
+  "elapsed_seconds": 51.67377853393555,
+  "epochs": 140,
+  "git_sha": "851537589d61bcce96130b055e5724291e7ea318",
+  "project": "contractive_fixed_particle_audit",
+  "records": [
+    {
+      "collective_parameters": 0,
+      "gap_n6_percent": 2.1690775156193665,
+      "gap_transfer_n7_percent": 5.360626920304012,
+      "learned_collective_angles": [],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.674461433205267
+        },
+        {
+          "epoch": 71,
+          "loss": 0.3983642835714275
+        },
+        {
+          "epoch": 140,
+          "loss": 0.2855036500835916
+        }
+      ],
+      "method": "baseline",
+      "seed": 0,
+      "trainable_parameters": 7145
+    },
+    {
+      "collective_parameters": 2,
+      "gap_n6_percent": 1.825858562814675,
+      "gap_transfer_n7_percent": 4.723319863700515,
+      "learned_collective_angles": [
+        0.10328216207269582,
+        0.06641018440908346
+      ],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6765173227827052
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4013948059045849
+        },
+        {
+          "epoch": 140,
+          "loss": 0.28892665366991704
+        }
+      ],
+      "method": "collective_random_init",
+      "seed": 0,
+      "trainable_parameters": 7147
+    },
+    {
+      "collective_parameters": 2,
+      "gap_n6_percent": 2.1690775156193665,
+      "gap_transfer_n7_percent": 5.360626920304012,
+      "learned_collective_angles": [
+        0.0,
+        0.0
+      ],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.674461433205267
+        },
+        {
+          "epoch": 71,
+          "loss": 0.3983642835714275
+        },
+        {
+          "epoch": 140,
+          "loss": 0.2855036500835916
+        }
+      ],
+      "method": "collective_identity_init",
+      "seed": 0,
+      "trainable_parameters": 7147
+    },
+    {
+      "collective_parameters": 2,
+      "gap_n6_percent": 2.0204072762186387,
+      "gap_transfer_n7_percent": 6.023139720836701,
+      "learned_collective_angles": [
+        0.03556823487536996,
+        -0.0074426927549317385
+      ],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6746851583214494
+        },
+        {
+          "epoch": 71,
+          "loss": 0.3986468503949331
+        },
+        {
+          "epoch": 140,
+          "loss": 0.2867002418113469
+        }
+      ],
+      "method": "collective_near_identity_init",
+      "seed": 0,
+      "trainable_parameters": 7147
+    },
+    {
+      "collective_parameters": 0,
+      "gap_n6_percent": 2.9339880365816695,
+      "gap_transfer_n7_percent": 6.286022954944448,
+      "learned_collective_angles": [],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7025802633900251
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4301814872254495
+        },
+        {
+          "epoch": 140,
+          "loss": 0.27591998405149765
+        }
+      ],
+      "method": "baseline",
+      "seed": 1,
+      "trainable_parameters": 7145
+    },
+    {
+      "collective_parameters": 2,
+      "gap_n6_percent": 2.412017194561944,
+      "gap_transfer_n7_percent": 6.329613263838252,
+      "learned_collective_angles": [
+        0.024266458106132156,
+        0.0955825625639486
+      ],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7053468108152623
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4402538312027399
+        },
+        {
+          "epoch": 140,
+          "loss": 0.28485417834311955
+        }
+      ],
+      "method": "collective_random_init",
+      "seed": 1,
+      "trainable_parameters": 7147
+    },
+    {
+      "collective_parameters": 2,
+      "gap_n6_percent": 2.9339880365816695,
+      "gap_transfer_n7_percent": 6.286022954944448,
+      "learned_collective_angles": [
+        0.0,
+        0.0
+      ],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7025802633900251
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4301814872254495
+        },
+        {
+          "epoch": 140,
+          "loss": 0.27591998405149765
+        }
+      ],
+      "method": "collective_identity_init",
+      "seed": 1,
+      "trainable_parameters": 7147
+    },
+    {
+      "collective_parameters": 2,
+      "gap_n6_percent": 2.6170552943833636,
+      "gap_transfer_n7_percent": 6.9699541933079034,
+      "learned_collective_angles": [
+        -0.12282819336880914,
+        -0.01924969028256595
+      ],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.702839029005291
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4283648721922397
+        },
+        {
+          "epoch": 140,
+          "loss": 0.2756963010711533
+        }
+      ],
+      "method": "collective_near_identity_init",
+      "seed": 1,
+      "trainable_parameters": 7147
+    },
+    {
+      "collective_parameters": 0,
+      "gap_n6_percent": 1.3287599991376853,
+      "gap_transfer_n7_percent": 4.152305883751439,
+      "learned_collective_angles": [],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7021853030614024
+        },
+        {
+          "epoch": 71,
+          "loss": 0.43970529723222285
+        },
+        {
+          "epoch": 140,
+          "loss": 0.2660389914826977
+        }
+      ],
+      "method": "baseline",
+      "seed": 2,
+      "trainable_parameters": 7145
+    },
+    {
+      "collective_parameters": 2,
+      "gap_n6_percent": 2.0701101612451422,
+      "gap_transfer_n7_percent": 3.936587292431959,
+      "learned_collective_angles": [
+        0.03212976403972243,
+        0.09258864071734516
+      ],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7022968119086113
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4204171031745334
+        },
+        {
+          "epoch": 140,
+          "loss": 0.261991952953713
+        }
+      ],
+      "method": "collective_random_init",
+      "seed": 2,
+      "trainable_parameters": 7147
+    },
+    {
+      "collective_parameters": 2,
+      "gap_n6_percent": 1.3287599991376853,
+      "gap_transfer_n7_percent": 4.152305883751439,
+      "learned_collective_angles": [
+        0.0,
+        0.0
+      ],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7021853030614024
+        },
+        {
+          "epoch": 71,
+          "loss": 0.43970529723222285
+        },
+        {
+          "epoch": 140,
+          "loss": 0.2660389914826977
+        }
+      ],
+      "method": "collective_identity_init",
+      "seed": 2,
+      "trainable_parameters": 7147
+    },
+    {
+      "collective_parameters": 2,
+      "gap_n6_percent": 2.000115225724164,
+      "gap_transfer_n7_percent": 4.412950251589232,
+      "learned_collective_angles": [
+        -0.028396750937842174,
+        -0.05949737152971297
+      ],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7021936464500897
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4451555811452716
+        },
+        {
+          "epoch": 140,
+          "loss": 0.2650639633851092
+        }
+      ],
+      "method": "collective_near_identity_init",
+      "seed": 2,
+      "trainable_parameters": 7147
+    },
+    {
+      "collective_parameters": 0,
+      "gap_n6_percent": 3.3421442299432336,
+      "gap_transfer_n7_percent": 7.3660324670291155,
+      "learned_collective_angles": [],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6814070075241715
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4053213069096467
+        },
+        {
+          "epoch": 140,
+          "loss": 0.28192136497644116
+        }
+      ],
+      "method": "baseline",
+      "seed": 3,
+      "trainable_parameters": 7145
+    },
+    {
+      "collective_parameters": 2,
+      "gap_n6_percent": 2.494744132405069,
+      "gap_transfer_n7_percent": 7.212073261731478,
+      "learned_collective_angles": [
+        0.0960117120871265,
+        0.1262149160922277
+      ],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6809057317642364
+        },
+        {
+          "epoch": 71,
+          "loss": 0.41124822228522295
+        },
+        {
+          "epoch": 140,
+          "loss": 0.290608530017907
+        }
+      ],
+      "method": "collective_random_init",
+      "seed": 3,
+      "trainable_parameters": 7147
+    },
+    {
+      "collective_parameters": 2,
+      "gap_n6_percent": 3.3421442299432336,
+      "gap_transfer_n7_percent": 7.3660324670291155,
+      "learned_collective_angles": [
+        0.0,
+        0.0
+      ],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6814070075241715
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4053213069096467
+        },
+        {
+          "epoch": 140,
+          "loss": 0.28192136497644116
+        }
+      ],
+      "method": "collective_identity_init",
+      "seed": 3,
+      "trainable_parameters": 7147
+    },
+    {
+      "collective_parameters": 2,
+      "gap_n6_percent": 2.9767676192464565,
+      "gap_transfer_n7_percent": 7.55168762865337,
+      "learned_collective_angles": [
+        -0.026664106079030848,
+        0.028082570960875314
+      ],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.681370200283133
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4061000569631205
+        },
+        {
+          "epoch": 140,
+          "loss": 0.28064416143187615
+        }
+      ],
+      "method": "collective_near_identity_init",
+      "seed": 3,
+      "trainable_parameters": 7147
+    },
+    {
+      "collective_parameters": 0,
+      "gap_n6_percent": 1.7723810351836677,
+      "gap_transfer_n7_percent": 4.5800479844818165,
+      "learned_collective_angles": [],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6558175941005109
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4176870072905424
+        },
+        {
+          "epoch": 140,
+          "loss": 0.2738915969411296
+        }
+      ],
+      "method": "baseline",
+      "seed": 4,
+      "trainable_parameters": 7145
+    },
+    {
+      "collective_parameters": 2,
+      "gap_n6_percent": 2.5585967486383865,
+      "gap_transfer_n7_percent": 4.423305680691403,
+      "learned_collective_angles": [
+        0.029841084018375295,
+        0.10391755323147693
+      ],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6578869581652528
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4183477346299231
+        },
+        {
+          "epoch": 140,
+          "loss": 0.27814072614480934
+        }
+      ],
+      "method": "collective_random_init",
+      "seed": 4,
+      "trainable_parameters": 7147
+    },
+    {
+      "collective_parameters": 2,
+      "gap_n6_percent": 1.7723810351836677,
+      "gap_transfer_n7_percent": 4.5800479844818165,
+      "learned_collective_angles": [
+        0.0,
+        0.0
+      ],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6558175941005109
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4176870072905424
+        },
+        {
+          "epoch": 140,
+          "loss": 0.2738915969411296
+        }
+      ],
+      "method": "collective_identity_init",
+      "seed": 4,
+      "trainable_parameters": 7147
+    },
+    {
+      "collective_parameters": 2,
+      "gap_n6_percent": 2.0592751089490102,
+      "gap_transfer_n7_percent": 5.5086009548040105,
+      "learned_collective_angles": [
+        -0.04293736780823093,
+        0.05423904152661371
+      ],
+      "loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6560542472401626
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4158162373825699
+        },
+        {
+          "epoch": 140,
+          "loss": 0.2790386624987816
+        }
+      ],
+      "method": "collective_near_identity_init",
+      "seed": 4,
+      "trainable_parameters": 7147
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "summary": {
+    "decision": "STOP",
+    "literal_global_parity_probability_delta": 1.6653345369377348e-16,
+    "literal_no_go_verified": true,
+    "median": {
+      "baseline": {
+        "gap_n6_percent": 2.1690775156193665,
+        "gap_transfer_n7_percent": 5.360626920304012
+      },
+      "collective_identity_init": {
+        "gap_n6_percent": 2.1690775156193665,
+        "gap_transfer_n7_percent": 5.360626920304012
+      },
+      "collective_near_identity_init": {
+        "gap_n6_percent": 2.0592751089490102,
+        "gap_transfer_n7_percent": 6.023139720836701
+      },
+      "collective_random_init": {
+        "gap_n6_percent": 2.412017194561944,
+        "gap_transfer_n7_percent": 4.723319863700515
+      }
+    },
+    "paired_seed_wins": 0,
+    "relative_transfer_gain_percent": -12.358867915678715,
+    "revision": "random angle -> exact identity (zero-gradient failure) -> near-identity number-conserving collective angle",
+    "transfer_gain_points": -0.6625128005326886
+  }
+}

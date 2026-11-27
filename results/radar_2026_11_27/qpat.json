@@ -1,0 +1,573 @@
+{
+  "caveat": "The teacher is the real exact reduced-basis MP-QGNN but is simulated, not run on hardware; the deployed student makes zero quantum calls.",
+  "command": "python experiments/radar_2026_11_27.py qpat --out results/radar_2026_11_27/qpat.json",
+  "data": {
+    "test_n5": 70,
+    "train_n5": 80,
+    "transfer_test_n6": 90
+  },
+  "elapsed_seconds": 19.29650044441223,
+  "git_sha": "851537589d61bcce96130b055e5724291e7ea318",
+  "project": "training_only_mpqgnn_prior",
+  "records": [
+    {
+      "gap_n5_percent": 0.5655100218889375,
+      "gap_transfer_n6_percent": 2.300162120981364,
+      "inference_quantum_calls": 0,
+      "method": "classical_baseline",
+      "seed": 0,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7070168554611059
+        },
+        {
+          "epoch": 91,
+          "loss": 0.4943192019776681
+        },
+        {
+          "epoch": 180,
+          "loss": 0.4391809992532071
+        }
+      ],
+      "teacher_loss_trace": null,
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.7229259961431422,
+      "gap_transfer_n6_percent": 1.9834013680323892,
+      "inference_quantum_calls": 0,
+      "method": "additive_drop_prior",
+      "seed": 0,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.36051262175112453
+        },
+        {
+          "epoch": 91,
+          "loss": 0.5323792192488365
+        },
+        {
+          "epoch": 180,
+          "loss": 0.48196928442594494
+        }
+      ],
+      "teacher_loss_trace": null,
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.5766244448178526,
+      "gap_transfer_n6_percent": 1.9971565446312178,
+      "inference_quantum_calls": 0,
+      "method": "distilled_trained_mpqgnn",
+      "seed": 0,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 2.0975940577174046
+        },
+        {
+          "epoch": 91,
+          "loss": 1.7100560593536942
+        },
+        {
+          "epoch": 180,
+          "loss": 1.6443874334651012
+        }
+      ],
+      "teacher_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6781573601280891
+        },
+        {
+          "epoch": 66,
+          "loss": 0.44462485689100645
+        },
+        {
+          "epoch": 130,
+          "loss": 0.2836145101937615
+        }
+      ],
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.9163303997838712,
+      "gap_transfer_n6_percent": 2.09918827215545,
+      "inference_quantum_calls": 0,
+      "method": "distilled_random_mpqgnn",
+      "seed": 0,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 2.0952104093705946
+        },
+        {
+          "epoch": 91,
+          "loss": 1.9339324191001777
+        },
+        {
+          "epoch": 180,
+          "loss": 1.9115001050762626
+        }
+      ],
+      "teacher_loss_trace": null,
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.6110466372473367,
+      "gap_transfer_n6_percent": 2.0589500447555364,
+      "inference_quantum_calls": 0,
+      "method": "classical_baseline",
+      "seed": 1,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6853532219688907
+        },
+        {
+          "epoch": 91,
+          "loss": 0.4891699886644261
+        },
+        {
+          "epoch": 180,
+          "loss": 0.43915387477639845
+        }
+      ],
+      "teacher_loss_trace": null,
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.8714492406505236,
+      "gap_transfer_n6_percent": 1.7356886016618889,
+      "inference_quantum_calls": 0,
+      "method": "additive_drop_prior",
+      "seed": 1,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6853532219688907
+        },
+        {
+          "epoch": 91,
+          "loss": 0.5445966323683288
+        },
+        {
+          "epoch": 180,
+          "loss": 0.3606270924519634
+        }
+      ],
+      "teacher_loss_trace": null,
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.5175506007270902,
+      "gap_transfer_n6_percent": 1.9089895366406262,
+      "inference_quantum_calls": 0,
+      "method": "distilled_trained_mpqgnn",
+      "seed": 1,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 2.0693353447820346
+        },
+        {
+          "epoch": 91,
+          "loss": 1.7349994652270464
+        },
+        {
+          "epoch": 180,
+          "loss": 1.6666721387679144
+        }
+      ],
+      "teacher_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7000424816402837
+        },
+        {
+          "epoch": 66,
+          "loss": 0.46763466801478476
+        },
+        {
+          "epoch": 130,
+          "loss": 0.3264761997401525
+        }
+      ],
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.7104258073946212,
+      "gap_transfer_n6_percent": 1.8563537394118423,
+      "inference_quantum_calls": 0,
+      "method": "distilled_random_mpqgnn",
+      "seed": 1,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 2.0715745362317906
+        },
+        {
+          "epoch": 91,
+          "loss": 1.9411678317022942
+        },
+        {
+          "epoch": 180,
+          "loss": 1.9075468289816406
+        }
+      ],
+      "teacher_loss_trace": null,
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.539969740678492,
+      "gap_transfer_n6_percent": 1.89392081569828,
+      "inference_quantum_calls": 0,
+      "method": "classical_baseline",
+      "seed": 2,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6990712794678244
+        },
+        {
+          "epoch": 91,
+          "loss": 0.4944323894518989
+        },
+        {
+          "epoch": 180,
+          "loss": 0.4234521107531694
+        }
+      ],
+      "teacher_loss_trace": null,
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.6202243077459313,
+      "gap_transfer_n6_percent": 1.9745296593595807,
+      "inference_quantum_calls": 0,
+      "method": "additive_drop_prior",
+      "seed": 2,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.40002844804492416
+        },
+        {
+          "epoch": 91,
+          "loss": 0.5326319857778294
+        },
+        {
+          "epoch": 180,
+          "loss": 0.47995140025013444
+        }
+      ],
+      "teacher_loss_trace": null,
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.6774558806113662,
+      "gap_transfer_n6_percent": 1.9292605546943564,
+      "inference_quantum_calls": 0,
+      "method": "distilled_trained_mpqgnn",
+      "seed": 2,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 2.0875530995265144
+        },
+        {
+          "epoch": 91,
+          "loss": 1.7448179031448483
+        },
+        {
+          "epoch": 180,
+          "loss": 1.6617678260611954
+        }
+      ],
+      "teacher_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7003304028100994
+        },
+        {
+          "epoch": 66,
+          "loss": 0.47031920492548157
+        },
+        {
+          "epoch": 130,
+          "loss": 0.33075047074177705
+        }
+      ],
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.5856712093941674,
+      "gap_transfer_n6_percent": 1.9678130599533272,
+      "inference_quantum_calls": 0,
+      "method": "distilled_random_mpqgnn",
+      "seed": 2,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 2.0861020806767483
+        },
+        {
+          "epoch": 91,
+          "loss": 1.9332472037889474
+        },
+        {
+          "epoch": 180,
+          "loss": 1.904373160790048
+        }
+      ],
+      "teacher_loss_trace": null,
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.5943542006327851,
+      "gap_transfer_n6_percent": 2.1494875397435553,
+      "inference_quantum_calls": 0,
+      "method": "classical_baseline",
+      "seed": 3,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7107513242415402
+        },
+        {
+          "epoch": 91,
+          "loss": 0.49418722353281763
+        },
+        {
+          "epoch": 180,
+          "loss": 0.42798268592638256
+        }
+      ],
+      "teacher_loss_trace": null,
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.6215967869191985,
+      "gap_transfer_n6_percent": 1.9249720496415268,
+      "inference_quantum_calls": 0,
+      "method": "additive_drop_prior",
+      "seed": 3,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.4108118229481152
+        },
+        {
+          "epoch": 91,
+          "loss": 0.3799408810844051
+        },
+        {
+          "epoch": 180,
+          "loss": 0.3595754204851179
+        }
+      ],
+      "teacher_loss_trace": null,
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.5471838869513856,
+      "gap_transfer_n6_percent": 1.5755721518631027,
+      "inference_quantum_calls": 0,
+      "method": "distilled_trained_mpqgnn",
+      "seed": 3,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 2.102482923537493
+        },
+        {
+          "epoch": 91,
+          "loss": 1.7418597371964186
+        },
+        {
+          "epoch": 180,
+          "loss": 1.6622439927363546
+        }
+      ],
+      "teacher_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6829475295311453
+        },
+        {
+          "epoch": 66,
+          "loss": 0.45279159391133195
+        },
+        {
+          "epoch": 130,
+          "loss": 0.3429654596798187
+        }
+      ],
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.7224839378857206,
+      "gap_transfer_n6_percent": 1.7730365245985924,
+      "inference_quantum_calls": 0,
+      "method": "distilled_random_mpqgnn",
+      "seed": 3,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 2.0978466094779407
+        },
+        {
+          "epoch": 91,
+          "loss": 1.9437776704228225
+        },
+        {
+          "epoch": 180,
+          "loss": 1.9154530825270504
+        }
+      ],
+      "teacher_loss_trace": null,
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.4600234577880391,
+      "gap_transfer_n6_percent": 1.9433310333013543,
+      "inference_quantum_calls": 0,
+      "method": "classical_baseline",
+      "seed": 4,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6864633752751964
+        },
+        {
+          "epoch": 91,
+          "loss": 0.5257424611535927
+        },
+        {
+          "epoch": 180,
+          "loss": 0.4425582885121547
+        }
+      ],
+      "teacher_loss_trace": null,
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.94803206630385,
+      "gap_transfer_n6_percent": 1.9376654988471298,
+      "inference_quantum_calls": 0,
+      "method": "additive_drop_prior",
+      "seed": 4,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6864633752751964
+        },
+        {
+          "epoch": 91,
+          "loss": 0.5675321905520709
+        },
+        {
+          "epoch": 180,
+          "loss": 0.34475100157266914
+        }
+      ],
+      "teacher_loss_trace": null,
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.45162900211279666,
+      "gap_transfer_n6_percent": 1.8424581857225286,
+      "inference_quantum_calls": 0,
+      "method": "distilled_trained_mpqgnn",
+      "seed": 4,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 2.0714634631982944
+        },
+        {
+          "epoch": 91,
+          "loss": 1.8066595152089735
+        },
+        {
+          "epoch": 180,
+          "loss": 1.6748381173969227
+        }
+      ],
+      "teacher_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6640562269229344
+        },
+        {
+          "epoch": 66,
+          "loss": 0.43920516766186296
+        },
+        {
+          "epoch": 130,
+          "loss": 0.3078099360989653
+        }
+      ],
+      "trainable_parameters": 1345
+    },
+    {
+      "gap_n5_percent": 0.9787810311487677,
+      "gap_transfer_n6_percent": 1.88813537493715,
+      "inference_quantum_calls": 0,
+      "method": "distilled_random_mpqgnn",
+      "seed": 4,
+      "student_loss_trace": [
+        {
+          "epoch": 1,
+          "loss": 2.073187012233536
+        },
+        {
+          "epoch": 91,
+          "loss": 1.952929459922549
+        },
+        {
+          "epoch": 180,
+          "loss": 1.9211253735458835
+        }
+      ],
+      "teacher_loss_trace": null,
+      "trainable_parameters": 1345
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "student_epochs": 180,
+  "summary": {
+    "decision": "STOP",
+    "gap_advantage_over_random_teacher_points": -0.020854161703476315,
+    "median": {
+      "additive_drop_prior": {
+        "gap_n5_percent": 0.7229259961431422,
+        "gap_transfer_n6_percent": 1.9376654988471298
+      },
+      "classical_baseline": {
+        "gap_n5_percent": 0.5655100218889375,
+        "gap_transfer_n6_percent": 2.0589500447555364
+      },
+      "distilled_random_mpqgnn": {
+        "gap_n5_percent": 0.7224839378857206,
+        "gap_transfer_n6_percent": 1.88813537493715
+      },
+      "distilled_trained_mpqgnn": {
+        "gap_n5_percent": 0.5471838869513856,
+        "gap_transfer_n6_percent": 1.9089895366406262
+      }
+    },
+    "paired_seed_wins": 4,
+    "relative_transfer_gain_percent": 7.283348544413829,
+    "revision": "stochastic additive logits -> separate supervised plus temperature-scaled distillation loss"
+  },
+  "teacher_epochs": 130
+}

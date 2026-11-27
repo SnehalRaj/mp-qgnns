@@ -1,0 +1,305 @@
+{
+  "caveat": "The optimized Slater overlap is a numerical lower bound on the true best fidelity; three restarts reduce but do not eliminate local-optimum risk. The reduced-basis MP-QGNN path is exact.",
+  "command": "python experiments/radar_2026_11_27.py fermionic --out results/radar_2026_11_27/fermionic.json",
+  "data": {
+    "n": 6,
+    "test": 70,
+    "train": 60
+  },
+  "elapsed_seconds": 27.512276649475098,
+  "epochs": 140,
+  "git_sha": "851537589d61bcce96130b055e5724291e7ea318",
+  "model": {
+    "D": 6,
+    "k": 3,
+    "layers": 2
+  },
+  "project": "slater_dequantization_boundary",
+  "projection": {
+    "restarts": 3,
+    "steps": 90
+  },
+  "records": [
+    {
+      "direct_slater_projection_gap_percent": 5.222983442272877,
+      "full_head_refit_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.2699492838442025
+        },
+        {
+          "epoch": 61,
+          "loss": 0.23311001132789338
+        },
+        {
+          "epoch": 120,
+          "loss": 0.18797094072915843
+        }
+      ],
+      "full_representation_refit_gap_percent": 2.5380052748072313,
+      "median_test_best_slater_fidelity": 0.6903171904595069,
+      "median_test_slater_infidelity": 0.30897248725138626,
+      "median_train_best_slater_fidelity": 0.6852268245850736,
+      "original_gap_percent": 2.2739587240408587,
+      "projected_head_refit_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.4554360807416101
+        },
+        {
+          "epoch": 61,
+          "loss": 0.32797917995001674
+        },
+        {
+          "epoch": 120,
+          "loss": 0.28047123567065835
+        }
+      ],
+      "projection_penalty_points": 0.09645436822822706,
+      "seed": 0,
+      "slater_projection_refit_gap_percent": 2.6344596430354583,
+      "training_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6750900730862487
+        },
+        {
+          "epoch": 71,
+          "loss": 0.39845081313421393
+        },
+        {
+          "epoch": 140,
+          "loss": 0.2704355330709702
+        }
+      ]
+    },
+    {
+      "direct_slater_projection_gap_percent": 5.14621015236949,
+      "full_head_refit_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.301767301349813
+        },
+        {
+          "epoch": 61,
+          "loss": 0.258094897888659
+        },
+        {
+          "epoch": 120,
+          "loss": 0.21485820144977738
+        }
+      ],
+      "full_representation_refit_gap_percent": 2.3974635715941828,
+      "median_test_best_slater_fidelity": 0.6779999327545221,
+      "median_test_slater_infidelity": 0.32189732208478816,
+      "median_train_best_slater_fidelity": 0.6588486944321224,
+      "original_gap_percent": 2.2644356160775425,
+      "projected_head_refit_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.45472546221229426
+        },
+        {
+          "epoch": 61,
+          "loss": 0.3314047918263868
+        },
+        {
+          "epoch": 120,
+          "loss": 0.2837284486024314
+        }
+      ],
+      "projection_penalty_points": 0.23937326497929234,
+      "seed": 1,
+      "slater_projection_refit_gap_percent": 2.636836836573475,
+      "training_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7026124344547366
+        },
+        {
+          "epoch": 71,
+          "loss": 0.43156209509949617
+        },
+        {
+          "epoch": 140,
+          "loss": 0.3035158295542659
+        }
+      ]
+    },
+    {
+      "direct_slater_projection_gap_percent": 8.75290840473002,
+      "full_head_refit_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.291058431266301
+        },
+        {
+          "epoch": 61,
+          "loss": 0.2530720561500283
+        },
+        {
+          "epoch": 120,
+          "loss": 0.22411930085950096
+        }
+      ],
+      "full_representation_refit_gap_percent": 3.381895898698928,
+      "median_test_best_slater_fidelity": 0.6922272211149738,
+      "median_test_slater_infidelity": 0.30697289264059124,
+      "median_train_best_slater_fidelity": 0.6767339356070361,
+      "original_gap_percent": 1.4075025575585043,
+      "projected_head_refit_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.5054235115058211
+        },
+        {
+          "epoch": 61,
+          "loss": 0.37607994640502257
+        },
+        {
+          "epoch": 120,
+          "loss": 0.3219475390602565
+        }
+      ],
+      "projection_penalty_points": -1.0693838797506183,
+      "seed": 2,
+      "slater_projection_refit_gap_percent": 2.3125120189483095,
+      "training_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.7014159706804567
+        },
+        {
+          "epoch": 71,
+          "loss": 0.42765289133623624
+        },
+        {
+          "epoch": 140,
+          "loss": 0.29244962207530967
+        }
+      ]
+    },
+    {
+      "direct_slater_projection_gap_percent": 8.71887105276381,
+      "full_head_refit_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.3178619305197176
+        },
+        {
+          "epoch": 61,
+          "loss": 0.27184982842136396
+        },
+        {
+          "epoch": 120,
+          "loss": 0.23401687167553328
+        }
+      ],
+      "full_representation_refit_gap_percent": 2.342370944083516,
+      "median_test_best_slater_fidelity": 0.7078082776502786,
+      "median_test_slater_infidelity": 0.2912534693099098,
+      "median_train_best_slater_fidelity": 0.6992318829647661,
+      "original_gap_percent": 3.5710464226728966,
+      "projected_head_refit_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.4748351759067218
+        },
+        {
+          "epoch": 61,
+          "loss": 0.32517461915703233
+        },
+        {
+          "epoch": 120,
+          "loss": 0.26933889386561327
+        }
+      ],
+      "projection_penalty_points": -0.023383937430110358,
+      "seed": 3,
+      "slater_projection_refit_gap_percent": 2.3189870066534057,
+      "training_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6821587720343748
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4052589900685649
+        },
+        {
+          "epoch": 140,
+          "loss": 0.3115429474834241
+        }
+      ]
+    },
+    {
+      "direct_slater_projection_gap_percent": 11.330130026445095,
+      "full_head_refit_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.28087372265435173
+        },
+        {
+          "epoch": 61,
+          "loss": 0.2470027942582026
+        },
+        {
+          "epoch": 120,
+          "loss": 0.211652274399313
+        }
+      ],
+      "full_representation_refit_gap_percent": 4.1253697093581065,
+      "median_test_best_slater_fidelity": 0.678843549530284,
+      "median_test_slater_infidelity": 0.32070365142922685,
+      "median_train_best_slater_fidelity": 0.6756066103941868,
+      "original_gap_percent": 2.6049497166298563,
+      "projected_head_refit_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.5027623592824007
+        },
+        {
+          "epoch": 61,
+          "loss": 0.3588865072280982
+        },
+        {
+          "epoch": 120,
+          "loss": 0.31415406096963616
+        }
+      ],
+      "projection_penalty_points": -1.004533993785084,
+      "seed": 4,
+      "slater_projection_refit_gap_percent": 3.1208357155730226,
+      "training_trace": [
+        {
+          "epoch": 1,
+          "loss": 0.6560760704093439
+        },
+        {
+          "epoch": 71,
+          "loss": 0.4024910782814831
+        },
+        {
+          "epoch": 140,
+          "loss": 0.28207474733695354
+        }
+      ]
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "summary": {
+    "decision": "PIVOT",
+    "k1_mathematical_control_fidelity": 1.0,
+    "median_best_slater_infidelity": 0.30897248725138626,
+    "median_refit_projection_penalty_points": -0.023383937430110358,
+    "revision": "direct projection -> equal-budget refit of full and projected edge heads",
+    "seeds_projection_penalty_at_least_one_point": 0,
+    "seeds_within_half_point": 3
+  }
+}
